@@ -6,6 +6,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function Process() {
   const containerRef = useRef(null);
+  const lineFillRef = useRef(null);
+  const stepRefs = useRef([]);
 
   const steps = [
     {
@@ -35,6 +37,7 @@ export default function Process() {
     }
   ];
 
+  // Desktop entrance animations
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.from('.process-step', {
@@ -68,6 +71,50 @@ export default function Process() {
     return () => ctx.revert();
   }, []);
 
+  // Mobile scroll-driven line fill + step highlight
+  useEffect(() => {
+    if (window.innerWidth >= 768) return;
+
+    const fill = lineFillRef.current;
+    const steps = stepRefs.current;
+    if (!fill) return;
+
+    const updateScroll = () => {
+      const container = containerRef.current;
+      if (!container) return;
+
+      // Line fill: % of line above viewport center
+      const lineEl = container.querySelector('.process-line-mobile');
+      if (lineEl) {
+        const lineRect = lineEl.getBoundingClientRect();
+        const center = window.innerHeight / 2;
+        const progress = (center - lineRect.top) / lineRect.height;
+        const clamped = Math.max(0, Math.min(1, progress));
+        fill.style.height = `${clamped * 100}%`;
+      }
+
+      // Step boxes: turn orange when step center is above viewport center
+      const center = window.innerHeight / 2;
+      steps.forEach((stepEl) => {
+        if (!stepEl) return;
+        const box = stepEl.querySelector('.step-box');
+        const rect = stepEl.getBoundingClientRect();
+        const stepCenter = rect.top + rect.height / 2;
+        const isActive = stepCenter < center;
+        if (box) {
+          box.style.borderColor = isActive ? 'var(--color-accent, #E65C00)' : 'rgba(255,255,255,0.2)';
+          box.style.color = isActive ? 'var(--color-accent, #E65C00)' : 'rgb(113,113,122)';
+          box.style.backgroundColor = isActive ? 'rgba(230,92,0,0.05)' : 'transparent';
+          box.style.transition = 'border-color 0.3s, color 0.3s, background-color 0.3s';
+        }
+      });
+    };
+
+    window.addEventListener('scroll', updateScroll, { passive: true });
+    updateScroll(); // initial
+    return () => window.removeEventListener('scroll', updateScroll);
+  }, []);
+
   return (
     <section id="proces" className="py-32 bg-[#09090b] border-t border-white/5 relative z-10" ref={containerRef}>
       <div className="max-w-7xl mx-auto px-8">
@@ -86,28 +133,40 @@ export default function Process() {
         <div className="relative">
           {/* Horizontal Line (Desktop) */}
           <div className="process-line-desktop hidden md:block absolute top-[28px] left-7 w-[calc(100%-3rem)] h-[1px] bg-white/10 z-0"></div>
-          {/* Vertical Line (Mobile) */}
-          <div className="process-line-mobile md:hidden absolute top-7 left-[28px] w-[1px] h-[calc(100%-4rem)] bg-white/10 z-0"></div>
+
+          {/* Vertical Line (Mobile) — with fill overlay */}
+          <div className="process-line-mobile md:hidden absolute top-7 left-[28px] w-[1px] h-[calc(100%-4rem)] bg-white/10 z-0 overflow-hidden">
+            <div
+              ref={lineFillRef}
+              className="w-full bg-accent origin-top"
+              style={{ height: '0%', transition: 'height 80ms linear' }}
+            />
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-16 md:gap-10 relative z-10">
             {steps.map((step, i) => (
-              <div key={i} className="process-step group relative flex flex-row md:flex-col gap-6 md:gap-10 items-start">
-
+              <div
+                key={i}
+                className="process-step group relative flex flex-row md:flex-col gap-6 md:gap-10 items-start"
+                ref={el => stepRefs.current[i] = el}
+              >
                 {/* Node Element */}
                 <div className="shrink-0 relative bg-[#09090b]">
-                  <div className="w-14 h-14 border border-white/20 rounded-none flex items-center justify-center font-mono text-lg font-bold text-zinc-500 transition-all duration-500 group-hover:border-accent group-hover:text-accent group-hover:bg-accent/5 relative z-10">
+                  <div
+                    className="step-box w-14 h-14 border border-white/20 rounded-none flex items-center justify-center font-mono text-lg font-bold text-zinc-500 relative z-10
+                      md:transition-all md:duration-500 md:group-hover:border-accent md:group-hover:text-accent md:group-hover:bg-accent/5"
+                  >
                     {step.num}
                   </div>
-                  {/* Glowing inner square on hover */}
-                  <div className="absolute inset-0 border border-accent/0 group-hover:border-accent/40 scale-50 group-hover:scale-100 transition-all duration-500 opacity-0 group-hover:opacity-100 z-0"></div>
+                  <div className="absolute inset-0 border border-accent/0 md:group-hover:border-accent/40 scale-50 md:group-hover:scale-100 transition-all duration-500 opacity-0 md:group-hover:opacity-100 z-0"></div>
                 </div>
 
                 {/* Text Content */}
                 <div className="flex flex-col pt-2 md:pt-0">
-                  <h4 className="text-2xl font-bold font-heading text-white mb-4 tracking-tight transition-colors duration-300 group-hover:text-accent">
+                  <h4 className="text-2xl font-bold font-heading text-white mb-4 tracking-tight transition-colors duration-300 md:group-hover:text-accent">
                     {step.title}
                   </h4>
-                  <p className="text-zinc-400 font-sans text-base leading-relaxed group-hover:text-zinc-300 transition-colors duration-300">
+                  <p className="text-zinc-400 font-sans text-base leading-relaxed md:group-hover:text-zinc-300 transition-colors duration-300">
                     {step.desc}
                   </p>
                 </div>

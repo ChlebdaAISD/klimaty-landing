@@ -41,57 +41,55 @@ export default function Features() {
           view-timeline-name: --cards-element-scrolls-in-body;
         }
 
-        /* DESKTOP: sticky stacking */
-        @media (min-width: 768px) {
+        .stack-card {
+          position: sticky;
+          padding-top: calc(var(--index) * 1.5rem);
+          --index0: calc(var(--index) - 1);
+          --reverse-index: calc(var(--numcards) - var(--index0));
+          --reverse-index0: calc(var(--reverse-index) - 1);
+        }
+
+        /* MOBILE: stack below navbar + header */
+        @media (max-width: 767px) {
           .stack-card {
-            position: sticky;
-            top: 24vh;
-            padding-top: calc(var(--index) * 1.5rem);
-            --index0: calc(var(--index) - 1);
-            --reverse-index: calc(var(--numcards) - var(--index0));
-            --reverse-index0: calc(var(--reverse-index) - 1);
+            top: 180px;
           }
-
-          .card__content {
-            transform-origin: top center;
-          }
-
-          @keyframes scale {
-            to {
-              transform: scale(calc(1.1 - calc(0.1 * var(--reverse-index))));
-            }
-          }
-
-          @supports (animation-timeline: view()) {
-            .card__content {
-              --start-range: calc(var(--index0) / var(--numcards) * 100%);
-              --end-range: calc((var(--index)) / var(--numcards) * 100%);
-              animation: linear scale forwards;
-              animation-timeline: --cards-element-scrolls-in-body;
-              animation-range: exit-crossing var(--start-range) exit-crossing var(--end-range);
-            }
+          #cards {
+            gap: 2rem;
           }
         }
 
-        /* MOBILE: no stacking, no sticky */
-        @media (max-width: 767px) {
-          #cards {
-            gap: 1.5rem;
-            padding-bottom: 0;
-          }
+        /* DESKTOP */
+        @media (min-width: 768px) {
           .stack-card {
-            position: static;
-            padding-top: 0;
+            top: 24vh;
           }
+        }
+
+        .card__content {
+          transform-origin: top center;
+        }
+
+        @keyframes scale {
+          to {
+            transform: scale(calc(1.1 - calc(0.1 * var(--reverse-index))));
+          }
+        }
+
+        @supports (animation-timeline: view()) {
           .card__content {
-            animation: none !important;
+            --start-range: calc(var(--index0) / var(--numcards) * 100%);
+            --end-range: calc((var(--index)) / var(--numcards) * 100%);
+            animation: linear scale forwards;
+            animation-timeline: --cards-element-scrolls-in-body;
+            animation-range: exit-crossing var(--start-range) exit-crossing var(--end-range);
           }
         }
       `}</style>
 
       <div className="max-w-5xl mx-auto px-8 relative">
 
-        {/* DESKTOP: sticky header */}
+        {/* DESKTOP: sticky header with full subtitle */}
         <div className="hidden md:block sticky top-[120px] z-[5] mb-12 max-w-2xl bg-[#09090b]/80 backdrop-blur-md py-4 rounded-none">
           <h2 className="text-sm font-mono text-accent uppercase tracking-widest font-bold mb-4">Dlaczego my?</h2>
           <h3 className="text-4xl md:text-5xl font-heading font-semibold text-white tracking-tight leading-none">
@@ -99,11 +97,11 @@ export default function Features() {
           </h3>
         </div>
 
-        {/* MOBILE: simple static header */}
-        <div className="md:hidden mb-10">
-          <h2 className="text-sm font-mono text-accent uppercase tracking-widest font-bold mb-4">Dlaczego my?</h2>
-          <h3 className="text-4xl font-heading font-semibold text-white tracking-tight leading-none">
-            Precyzja jako standard.
+        {/* MOBILE: sticky header - sits below fixed navbar */}
+        <div className="md:hidden sticky top-[70px] z-[6] mb-4 bg-[#09090b]/90 backdrop-blur-md py-3">
+          <h2 className="text-xs font-mono text-accent uppercase tracking-widest font-bold mb-3">Dlaczego my?</h2>
+          <h3 className="text-3xl font-heading font-semibold text-white tracking-tight leading-tight">
+            Precyzja jako standard,<br />nie jako dodatek.
           </h3>
         </div>
 
