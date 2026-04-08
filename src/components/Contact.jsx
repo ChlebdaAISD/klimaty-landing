@@ -39,13 +39,13 @@ export default function Contact() {
                 </div>
               </a>
               
-              <a href="mailto:kontakt@klimaty.pl" className="group flex items-center gap-6 p-6 bg-[#18181b] border border-white/5 rounded-none hover:border-accent/30 transition-all cursor-pointer w-max">
+              <a href="mailto:kontakt@klima-ty.pl" className="group flex items-center gap-6 p-6 bg-[#18181b] border border-white/5 rounded-none hover:border-accent/30 transition-all cursor-pointer w-max">
                 <div className="w-12 h-12 rounded-none bg-white/5 flex items-center justify-center text-zinc-300 group-hover:bg-accent/10 group-hover:text-accent group-hover:scale-110 transition-all">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                 </div>
                 <div>
                   <div className="text-xs font-mono text-zinc-500 uppercase tracking-wider mb-1">Napisz e-mail</div>
-                  <div className="text-lg font-bold font-sans text-white tracking-tight group-hover:text-accent transition-colors">kontakt@klimaty.pl</div>
+                  <div className="text-lg font-bold font-sans text-white tracking-tight group-hover:text-accent transition-colors">kontakt@klima-ty.pl</div>
                 </div>
               </a>
             </div>

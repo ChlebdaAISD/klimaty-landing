@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowRight } from '@phosphor-icons/react';
 import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
@@ -78,6 +79,15 @@ const MotionButton = ({ label, variant = 'primary', context = 'light', className
   );
 
   if (href) {
+    // Use React Router Link for internal routes, regular <a> for tel:/mailto:/external
+    const isInternal = href.startsWith('/') && !href.startsWith('//');
+    if (isInternal) {
+      return (
+        <Link to={href} className={wrapperClasses}>
+          {content}
+        </Link>
+      );
+    }
     return (
       <a href={href} className={wrapperClasses}>
         {content}

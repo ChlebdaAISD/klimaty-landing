@@ -49,8 +49,8 @@ export default function Hero() {
           </p>
           
           <h1 className="hero-part font-heading font-semibold text-5xl md:text-7xl lg:text-[5.5rem] leading-[0.95] tracking-tight text-text-dark mb-6">
-            Klimatyzacja <br className="hidden md:block" />
-            <span className="text-text-light">skrojona pod Ciebie.</span>
+            Klimatyzacja Kraków <br className="hidden md:block" />
+            <span className="text-text-light">montaż, serwis i sprzedaż.</span>
           </h1>
           
           <p className="hero-part max-w-lg text-lg text-text-light leading-relaxed mb-10 font-sans">

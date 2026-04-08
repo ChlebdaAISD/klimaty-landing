@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { X, MagnifyingGlass, CaretLeft, CaretRight } from '@phosphor-icons/react';
+import { Link } from 'react-router-dom';
+import { X, MagnifyingGlass, CaretLeft, CaretRight, ArrowRight } from '@phosphor-icons/react';
 
 export default function Gallery() {
   const [isOpen, setIsOpen] = useState(false);
@@ -176,6 +177,16 @@ export default function Gallery() {
           >
             <CaretRight size={24} />
           </button>
+        </div>
+
+        <div className="mt-12 flex justify-center">
+          <Link
+            to="/realizacje/"
+            className="group inline-flex items-center gap-3 text-accent font-bold text-sm uppercase tracking-widest hover:gap-4 transition-all"
+          >
+            Zobacz pełne portfolio realizacji
+            <ArrowRight size={18} weight="bold" />
+          </Link>
         </div>
       </div>
 

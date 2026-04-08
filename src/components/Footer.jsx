@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { cities } from '../data/cities';
 
 export default function Footer() {
   const [time, setTime] = useState('');
@@ -15,44 +17,50 @@ export default function Footer() {
 
   return (
     <footer className="bg-[#09090b] pt-20 pb-10 border-t border-white/5 relative z-20">
-      <div className="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-start gap-12 border-b border-white/10 pb-12 mb-10">
-        <div className="flex-1">
-          <img 
-            src="/assets/loga/biale.png" 
-            alt="klimaTY Logo" 
-            className="h-10 mb-6"
-          />
-          <p className="text-zinc-500 text-sm max-w-sm font-sans leading-relaxed">
+      <div className="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 border-b border-white/10 pb-12 mb-10">
+        <div className="lg:col-span-2">
+          <Link to="/">
+            <img
+              src="/assets/loga/biale.png"
+              alt="klimaTY Logo"
+              className="h-10 mb-6"
+            />
+          </Link>
+          <p className="text-zinc-500 text-sm max-w-sm font-sans leading-relaxed mb-6">
             Nie sprzedajemy tylko klimatyzacji. Dostarczamy precyzyjne środowisko termiczne do domów, mieszkań i biur z certyfikacją montażu.
           </p>
+          <a href="tel:883297379" className="text-accent hover:text-white transition-colors font-mono font-bold text-lg block mb-2">883 297 379</a>
+          <a href="mailto:kontakt@klima-ty.pl" className="text-zinc-400 hover:text-white transition-colors font-sans text-sm">kontakt@klima-ty.pl</a>
         </div>
-        
-        <div className="flex flex-col gap-4 min-w-[150px]">
-          <h5 className="text-xs font-mono uppercase tracking-widest text-zinc-600 mb-2">Nawigacja</h5>
-          <span className="text-zinc-500 font-sans text-sm font-medium cursor-default select-none">Usługi</span>
-          <span className="text-zinc-500 font-sans text-sm font-medium cursor-default select-none">O nas</span>
-          <span className="text-zinc-500 font-sans text-sm font-medium cursor-default select-none">Portfolio</span>
-          <span className="text-zinc-500 font-sans text-sm font-medium cursor-default select-none">Kontakt</span>
+
+        <div className="flex flex-col gap-3">
+          <h5 className="text-xs font-mono uppercase tracking-widest text-zinc-600 mb-2">Usługi</h5>
+          <Link to="/uslugi/" className="text-zinc-400 hover:text-accent transition-colors font-sans text-sm font-medium">Wszystkie usługi</Link>
+          <Link to="/montaz-klimatyzacji/" className="text-zinc-400 hover:text-accent transition-colors font-sans text-sm font-medium">Montaż klimatyzacji</Link>
+          <Link to="/serwis-klimatyzacji/" className="text-zinc-400 hover:text-accent transition-colors font-sans text-sm font-medium">Serwis klimatyzacji</Link>
+          <Link to="/sprzedaz-klimatyzacji/" className="text-zinc-400 hover:text-accent transition-colors font-sans text-sm font-medium">Sprzedaż klimatyzacji</Link>
         </div>
-        
-        <div className="flex flex-col gap-4 min-w-[150px]">
-          <h5 className="text-xs font-mono uppercase tracking-widest text-zinc-600 mb-2">Social</h5>
-          <a href="#" className="text-white hover:text-accent transition-colors font-sans text-sm font-medium">Facebook</a>
-          <a href="#" className="text-white hover:text-accent transition-colors font-sans text-sm font-medium">Instagram</a>
-          <a href="#" className="text-white hover:text-accent transition-colors font-sans text-sm font-medium">Google Maps</a>
+
+        <div className="flex flex-col gap-3">
+          <h5 className="text-xs font-mono uppercase tracking-widest text-zinc-600 mb-2">Firma</h5>
+          <Link to="/o-nas/" className="text-zinc-400 hover:text-accent transition-colors font-sans text-sm font-medium">O nas</Link>
+          <Link to="/realizacje/" className="text-zinc-400 hover:text-accent transition-colors font-sans text-sm font-medium">Realizacje</Link>
+          <Link to="/opinie/" className="text-zinc-400 hover:text-accent transition-colors font-sans text-sm font-medium">Opinie</Link>
+          <Link to="/faq/" className="text-zinc-400 hover:text-accent transition-colors font-sans text-sm font-medium">FAQ</Link>
+          <Link to="/kontakt/" className="text-zinc-400 hover:text-accent transition-colors font-sans text-sm font-medium">Kontakt</Link>
         </div>
-        
-        <div className="flex flex-col gap-4 min-w-[200px]">
-          <h5 className="text-xs font-mono uppercase tracking-widest text-zinc-600 mb-2">Dane firmy</h5>
-          <p className="text-white font-sans text-sm font-medium">klimaTY</p>
-          <p className="text-zinc-400 font-sans text-sm">Kraków i okolice</p>
-          <a href="tel:883297379" className="text-accent hover:text-white transition-colors font-mono font-bold">883 297 379</a>
-          <div className="mt-2">
-            <h5 className="text-xs font-mono uppercase tracking-widest text-zinc-600 mb-2">Obszar działania</h5>
-            <p className="text-zinc-500 text-xs font-sans leading-relaxed">
-              Kraków · Wieliczka · Bochnia · Zielonki · Michałowice · Bibice · województwo małopolskie
-            </p>
-          </div>
+
+        <div className="flex flex-col gap-3">
+          <h5 className="text-xs font-mono uppercase tracking-widest text-zinc-600 mb-2">Obsługujemy</h5>
+          {cities.map((city) => (
+            <Link
+              key={city.slug}
+              to={`/${city.slug}/`}
+              className="text-zinc-400 hover:text-accent transition-colors font-sans text-sm font-medium"
+            >
+              {city.name}
+            </Link>
+          ))}
         </div>
       </div>
       
