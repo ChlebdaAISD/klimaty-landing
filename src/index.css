@@ -8,6 +8,12 @@
   --color-text-dark: #09090b;
   --color-text-light: #71717a;
 
+  /* shadcn/ui dark theme tokens */
+  --color-card: #09090b;
+  --color-card-foreground: #fafafa;
+  --color-muted: #27272a;
+  --color-muted-foreground: #71717a;
+
   --font-heading: "Geist", sans-serif;
   --font-sans: "Geist", sans-serif;
   --font-mono: "Geist Mono", monospace;

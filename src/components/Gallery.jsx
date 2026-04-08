@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { X, MagnifyingGlass, CaretLeft, CaretRight } from '@phosphor-icons/react';
+import { Link } from 'react-router-dom';
+import { X, MagnifyingGlass, CaretLeft, CaretRight, ArrowRight } from '@phosphor-icons/react';
 
 export default function Gallery() {
   const [isOpen, setIsOpen] = useState(false);
@@ -147,7 +148,7 @@ export default function Gallery() {
         <div className="flex items-center justify-center gap-8 mt-4">
           <button
             onClick={handlePrev}
-            className="w-12 h-12 rounded-none border border-white/10 flex items-center justify-center text-white hover:bg-accent transition-all duration-300 disabled:opacity-20 disabled:hover:bg-transparent"
+            className="w-12 h-12 rounded-none border border-white/10 flex items-center justify-center text-white hover:bg-accent transition-colors duration-300 disabled:opacity-20 disabled:hover:bg-transparent"
             disabled={isMobile && currentIndex === 0}
           >
             <CaretLeft size={24} />
@@ -160,7 +161,7 @@ export default function Gallery() {
                 <div key={i} className="w-2 h-1 bg-white/20" />
               ))}
               <div
-                className="absolute top-0 h-1 bg-accent transition-all duration-500 shadow-[0_0_15px_rgba(196,98,45,0.5)]"
+                className="absolute top-0 h-1 bg-accent transition-[left,width] duration-500 shadow-[0_0_15px_rgba(196,98,45,0.5)]"
                 style={{
                   left: `${(currentIndex / (maxIndex || 1)) * (maxIndex * 16)}px`,
                   width: `${visibleCount * 16 - 8}px`
@@ -171,11 +172,21 @@ export default function Gallery() {
 
           <button
             onClick={handleNext}
-            className="w-12 h-12 rounded-none border border-white/10 flex items-center justify-center text-white hover:bg-accent transition-all duration-300 disabled:opacity-20 disabled:hover:bg-transparent"
+            className="w-12 h-12 rounded-none border border-white/10 flex items-center justify-center text-white hover:bg-accent transition-colors duration-300 disabled:opacity-20 disabled:hover:bg-transparent"
             disabled={isMobile && currentIndex >= mobileMaxIndex}
           >
             <CaretRight size={24} />
           </button>
+        </div>
+
+        <div className="mt-12 flex justify-center">
+          <Link
+            to="/realizacje/"
+            className="group inline-flex items-center gap-3 text-accent font-bold text-sm uppercase tracking-widest hover:gap-4 transition-[gap] underline underline-offset-4"
+          >
+            Zobacz pełne portfolio realizacji
+            <ArrowRight size={18} weight="bold" />
+          </Link>
         </div>
       </div>
 

@@ -35,7 +35,7 @@ export default function FloatingPhone() {
           aria-label="Zadzwoń do nas"
         >
           {/* Pulse Effect */}
-          <span className="absolute inset-0 rounded-none bg-accent animate-ping opacity-20 pointer-events-none" />
+          <span className="absolute inset-0 rounded-none bg-accent animate-ping opacity-20 pointer-events-none will-change-transform" />
           <Phone size={24} weight="fill" />
         </motion.a>
       )}

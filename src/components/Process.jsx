@@ -1,4 +1,6 @@
 import React, { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
+import { ArrowRight } from '@phosphor-icons/react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -8,6 +10,7 @@ export default function Process() {
   const containerRef = useRef(null);
   const lineFillRef = useRef(null);
   const stepRefs = useRef([]);
+  const rafRef = useRef(null);
 
   const steps = [
     {
@@ -110,9 +113,20 @@ export default function Process() {
       });
     };
 
-    window.addEventListener('scroll', updateScroll, { passive: true });
+    const handleScroll = () => {
+      if (rafRef.current) return;
+      rafRef.current = requestAnimationFrame(() => {
+        updateScroll();
+        rafRef.current = null;
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
     updateScroll(); // initial
-    return () => window.removeEventListener('scroll', updateScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+    };
   }, []);
 
   return (
@@ -173,6 +187,16 @@ export default function Process() {
               </div>
             ))}
           </div>
+        </div>
+
+        <div className="mt-20 flex justify-center">
+          <Link
+            to="/o-nas/"
+            className="group inline-flex items-center gap-3 text-accent font-bold text-sm uppercase tracking-widest hover:gap-4 transition-all underline underline-offset-4"
+          >
+            Dowiedz się więcej o nas i o tym jak pracujemy
+            <ArrowRight size={18} weight="bold" />
+          </Link>
         </div>
       </div>
     </section>

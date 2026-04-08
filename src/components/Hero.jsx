@@ -38,7 +38,7 @@ export default function Hero() {
     <section id="hero-section" ref={sectionRef} className="relative min-h-[100dvh] w-full flex items-center pt-24 pb-32 overflow-hidden bg-background">
       
       {/* Abstract Background Element (Orange Sun/Circle from Aero Reference) */}
-      <div className="absolute top-[10%] right-[10%] w-[500px] h-[500px] bg-accent/20 rounded-none blur-[100px] pointer-events-none z-0"></div>
+      <div className="hidden md:block absolute top-[10%] right-[10%] w-[500px] h-[500px] bg-accent/20 rounded-none blur-[100px] pointer-events-none z-0"></div>
 
       <div className="max-w-7xl mx-auto px-8 w-full relative z-10 flex flex-col lg:flex-row items-center gap-16">
         
@@ -49,8 +49,8 @@ export default function Hero() {
           </p>
           
           <h1 className="hero-part font-heading font-semibold text-5xl md:text-7xl lg:text-[5.5rem] leading-[0.95] tracking-tight text-text-dark mb-6">
-            Klimatyzacja <br className="hidden md:block" />
-            <span className="text-text-light">skrojona pod Ciebie.</span>
+            Klimatyzacja Kraków <br className="hidden md:block" />
+            <span className="text-text-light">montaż, serwis i sprzedaż.</span>
           </h1>
           
           <p className="hero-part max-w-lg text-lg text-text-light leading-relaxed mb-10 font-sans">
@@ -77,7 +77,7 @@ export default function Hero() {
       <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-60 hover:opacity-100 transition-opacity z-20">
         <span className="text-[10px] font-mono tracking-[0.2em] uppercase text-text-dark">Scroll</span>
         <div className="w-[1px] h-12 bg-text-light/30 relative overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-full bg-text-dark origin-top animate-[scrolldown_2s_ease-in-out_infinite]"></div>
+          <div className="absolute top-0 left-0 w-full h-full bg-text-dark origin-top animate-[scrolldown_2s_ease-in-out_infinite] will-change-transform"></div>
         </div>
       </div>
       
