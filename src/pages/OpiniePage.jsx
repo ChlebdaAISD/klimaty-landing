@@ -160,12 +160,12 @@ export default function OpiniePage() {
         </div>
       </DarkSection>
 
-      <DarkSection eyebrow="Więcej opinii" h2="Jak wystawiają nam opinie na Google?">
+      <DarkSection eyebrow="Więcej opinii" h2="Skąd biorą się nasze opinie?">
         <p className="text-zinc-400 font-sans text-lg leading-relaxed max-w-3xl mb-8">
           Wszystkie nasze opinie znajdziesz w profilu Google Business. Jeśli korzystałeś z naszych usług — będziemy wdzięczni za opinię.
         </p>
         <a
-          href="https://www.google.com/search?q=klimaTY+Krak%C3%B3w"
+          href="https://www.google.com/search?sca_esv=26efe42c3f425b34&cs=0&sxsrf=ANbL-n5bQmPT57Yqv87L20UL97h3EAwGqA:1775652851808&q=klimaTY+Opinie&rflfq=1&num=20&stick=H4sIAAAAAAAAAONgkxI2sjA0sTQ2NjYyMzE1MbGwMDY03MDI-IqRLzsnMzcxJFLBvyAzLzN1ESuaAAAf-447PAAAAA&rldimm=2814933326454488311&tbm=lcl&hl=pl-PL&sa=X&ved=2ahUKEwipvOarpt6TAxVSS_EDHbqsAlgQ9fQKegQIERAG&biw=2274&bih=1289&dpr=2#lkt=LocalPoiReviews"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-3 bg-accent text-white px-8 py-4 font-bold uppercase tracking-widest text-sm hover:bg-accent/90 transition-colors"
