@@ -86,7 +86,6 @@ export default function Footer() {
         <div className="flex items-center gap-3">
           <div className="flex items-center gap-2 px-3 py-1.5 rounded-none bg-white/5 border border-white/10">
             <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-none bg-emerald-400 opacity-75"></span>
               <span className="relative inline-flex rounded-none h-2 w-2 bg-emerald-500"></span>
             </span>
             <span className="text-xs font-mono tracking-widest text-zinc-400">KRK {time}</span>

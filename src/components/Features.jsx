@@ -113,7 +113,7 @@ export default function Features() {
                   {card.badge && (
                     <div className="flex items-center gap-2 mb-4">
                       <span className="relative flex h-2 w-2">
-                        <span className="animate-ping absolute inline-flex h-full w-full rounded-none bg-emerald-400 opacity-75"></span>
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-none bg-emerald-400 opacity-75 will-change-transform"></span>
                         <span className="relative inline-flex rounded-none h-2 w-2 bg-emerald-500"></span>
                       </span>
                       <span className="text-[10px] font-mono tracking-widest uppercase text-emerald-600 font-bold">Ważne</span>

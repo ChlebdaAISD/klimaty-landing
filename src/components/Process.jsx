@@ -10,6 +10,7 @@ export default function Process() {
   const containerRef = useRef(null);
   const lineFillRef = useRef(null);
   const stepRefs = useRef([]);
+  const rafRef = useRef(null);
 
   const steps = [
     {
@@ -112,9 +113,20 @@ export default function Process() {
       });
     };
 
-    window.addEventListener('scroll', updateScroll, { passive: true });
+    const handleScroll = () => {
+      if (rafRef.current) return;
+      rafRef.current = requestAnimationFrame(() => {
+        updateScroll();
+        rafRef.current = null;
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
     updateScroll(); // initial
-    return () => window.removeEventListener('scroll', updateScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+    };
   }, []);
 
   return (

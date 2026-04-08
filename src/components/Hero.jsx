@@ -77,7 +77,7 @@ export default function Hero() {
       <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-60 hover:opacity-100 transition-opacity z-20">
         <span className="text-[10px] font-mono tracking-[0.2em] uppercase text-text-dark">Scroll</span>
         <div className="w-[1px] h-12 bg-text-light/30 relative overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-full bg-text-dark origin-top animate-[scrolldown_2s_ease-in-out_infinite]"></div>
+          <div className="absolute top-0 left-0 w-full h-full bg-text-dark origin-top animate-[scrolldown_2s_ease-in-out_infinite] will-change-transform"></div>
         </div>
       </div>
       

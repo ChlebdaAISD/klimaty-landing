@@ -40,7 +40,7 @@ export default function Navbar({ isMenuOpen, setIsMenuOpen }) {
   return (
     <nav
       ref={navRef}
-      className={`fixed top-6 left-4 right-4 md:left-[100px] md:right-8 xl:left-[calc(50%+40px)] xl:-translate-x-1/2 xl:w-[1280px] z-50 transition-all duration-300 rounded-none ${
+      className={`fixed top-6 left-4 right-4 md:left-[100px] md:right-8 xl:left-[calc(50%+40px)] xl:-translate-x-1/2 xl:w-[1280px] z-50 transition-[background-color,border-color,box-shadow,opacity] duration-300 rounded-none ${
         isMenuOpen ? 'opacity-0 pointer-events-none' : 'opacity-100'
       } ${
         isScrolled
