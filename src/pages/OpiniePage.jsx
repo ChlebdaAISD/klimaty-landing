@@ -1,5 +1,7 @@
 import React from 'react';
-import { Star, GoogleLogo, Quotes, ArrowSquareOut } from '@phosphor-icons/react';
+import { Star, GoogleLogo, ArrowSquareOut } from '@phosphor-icons/react';
+import { Card, CardContent } from '../components/ui/card';
+import { Avatar, AvatarFallback } from '../components/ui/avatar';
 import SEOHead from '../components/SEOHead';
 import PageHero from '../components/PageHero';
 import DarkSection from '../components/DarkSection';
@@ -61,7 +63,7 @@ function StarRow({ rating = 5 }) {
       {Array.from({ length: 5 }).map((_, i) => (
         <Star
           key={i}
-          size={18}
+          size={14}
           weight="fill"
           className={i < rating ? 'text-accent' : 'text-zinc-700'}
         />
@@ -69,6 +71,24 @@ function StarRow({ rating = 5 }) {
     </div>
   );
 }
+
+function getInitials(name) {
+  return name
+    .split(' ')
+    .slice(0, 2)
+    .map((w) => w[0]?.toUpperCase() ?? '')
+    .join('');
+}
+
+const chunkArray = (array, chunkSize) => {
+  const result = [];
+  for (let i = 0; i < array.length; i += chunkSize) {
+    result.push(array.slice(i, i + chunkSize));
+  }
+  return result;
+};
+
+const reviewChunks = chunkArray(reviews, Math.ceil(reviews.length / 3));
 
 export default function OpiniePage() {
   return (
@@ -91,7 +111,7 @@ export default function OpiniePage() {
 
       <DarkSection eyebrow="Podsumowanie" h2="Jak oceniają nas klienci?">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-[#0d0d10] border border-white/5 p-8 text-center">
+          <div className="bg-[#0d0d10] border border-white/5 p-8 text-center flex flex-col items-center">
             <div className="text-6xl font-heading font-bold text-accent mb-2">{avgRating}</div>
             <StarRow rating={5} />
             <p className="text-xs font-mono uppercase tracking-widest text-zinc-500 mt-3">Średnia ocena</p>
@@ -109,22 +129,33 @@ export default function OpiniePage() {
       </DarkSection>
 
       <DarkSection variant="alt" eyebrow="Opinie z Google" h2="Co mówią klienci o naszej pracy?">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {reviews.map((review) => (
-            <article key={review.id} className="bg-[#0d0d10] border border-white/5 p-8 flex flex-col gap-4">
-              <Quotes size={32} weight="duotone" className="text-accent" />
-              <StarRow rating={review.rating} />
-              <p className="text-sm text-zinc-300 leading-relaxed flex-1">
-                {review.text}
-              </p>
-              <div className="flex items-center justify-between pt-4 border-t border-white/5">
-                <div>
-                  <p className="text-sm font-bold text-white">{review.author}</p>
-                  <p className="text-xs font-mono uppercase tracking-widest text-zinc-500">Opinia z Google</p>
-                </div>
-                <GoogleLogo size={24} weight="duotone" className="text-accent" />
-              </div>
-            </article>
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {reviewChunks.map((chunk, chunkIndex) => (
+            <div key={chunkIndex} className="space-y-3">
+              {chunk.map((review) => (
+                <Card key={review.id}>
+                  <CardContent className="grid grid-cols-[auto_1fr] gap-3 pt-6">
+                    <Avatar className="size-9">
+                      <AvatarFallback className="bg-zinc-800 text-zinc-300 text-xs">
+                        {getInitials(review.author)}
+                      </AvatarFallback>
+                    </Avatar>
+                    <div>
+                      <h3 className="font-semibold text-white text-sm">{review.author}</h3>
+                      <div className="mt-0.5">
+                        <StarRow rating={review.rating} />
+                      </div>
+                      <blockquote className="mt-2">
+                        <p className="text-zinc-400 text-sm leading-relaxed">„{review.text}"</p>
+                      </blockquote>
+                      <span className="text-muted-foreground text-xs font-mono mt-2 block">
+                        Opinia z Google
+                      </span>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           ))}
         </div>
       </DarkSection>

@@ -1,37 +1,233 @@
 [
   {
     "id": 1,
+    "author": "Oskar Stefański",
+    "rating": 5,
+    "source": "google",
+    "text": "Serdecznie polecam usługi Pana Daniela. Świetny kontakt, szybki i profesjonalny montaż. Widać doświadczenie i pewność w tym, co robi. Do tego zostawia po sobie mieszkanie w lepszym stanie niż zastał. A przy tym jest po prostu sympatyczny — rozmowa z nim sprawia, że całość przebiega w miłej atmosferze."
+  },
+  {
+    "id": 2,
+    "author": "Jakub Bąk",
+    "rating": 5,
+    "source": "google",
+    "text": "Polecam! Pan Daniel to fachowiec w każdym calu. Usługa była wzorowa, montaż przebiegł sprawnie, czysto, punktualnie i jestem super zadowolony z efektów :)"
+  },
+  {
+    "id": 3,
+    "author": "A J",
+    "rating": 5,
+    "source": "google",
+    "text": "Wszystko super. Sprzęt zakupiony wcześniej czekał na nas żeby zapewnić cenę (czasy inflacji). Monaz beż problemu, wręcz wzorowo bym powiedział. Sami nie wiedzieliśmy jakie klimatyzatory wziąć, doradzono nam GREE. Po roku użytkowania"
+  },
+  {
+    "id": 4,
     "author": "Michał Włodarczyk",
     "rating": 5,
     "source": "google",
     "text": "Rzadko piszę opinie, ale tym razem gorąco polecam klimaTY, a w szczególności Pana Daniela. Montaż klimatyzacji wykonany ekspresowo, w pełni profesjonalnie i bardzo starannie. Widać, że Pan Daniel ma lata doświadczenia i przykłada się do wykonywanej pracy. Rzetelnie doradzał przy wyborze urządzeń i odpowiadał na wszelkie pytania. Po instalacji wszystko dokładnie wysprzątał i zostawił mieszkanie czystsze niż przed montażem. Dodatkowo jest niezwykle uprzejmy, kulturalny i uczciwy. Z czystym sumieniem serdecznie polecam!"
   },
   {
-    "id": 2,
+    "id": 5,
     "author": "Agata Luzar",
     "rating": 5,
     "source": "google",
     "text": "Z czystym sumieniem polecam firmę KlimaTy. Fachowe doradztwo, miły kontakt, usługa wykonana w umówionym terminie. Podczas prac wszystko zostało świetnie zabezpieczone, na bieżąco sprzątane, montaż wykonany bardzo czysto i schludnie. Pan Daniel bardzo chętnie odpowiada na pytania oraz uwzględnia wszystkie sugestie podczas montażu. Jestem bardzo zadowolona z usługi. Serdecznie polecam!"
   },
   {
-    "id": 3,
+    "id": 6,
+    "author": "MiAiEiP Michalski",
+    "rating": 5,
+    "source": "google",
+    "text": "Wszystko super! Rozpoczęcie i zakończenie w ustalonym terminie. Trudna instalacja (tak mówili wszyscy z kilku firm, które prosiłem o propozycję – 4 jednostki wew., skropliny odprowadzone w 2 miejsca) wykonana szybko i wyjątkowo starannie – wszystko 10/10! Zdecydowanie polecam Pana Daniela!"
+  },
+  {
+    "id": 7,
+    "author": "Jagoda Romanowska",
+    "rating": 5,
+    "source": "google",
+    "text": "Zdecydowanie polecam! Profesjonalne doradztwo w zakresie możliwych rozwiązań montażowych, stosowanych materiałów i urządzeń, terminowość i wysoki standard wykonania. Właściciel firmy"
+  },
+  {
+    "id": 8,
+    "author": "Damian Stępień",
+    "rating": 5,
+    "source": "google",
+    "text": "Serdecznie polecam. Bardzo profesjonalna i rzetelna firma. Za nami już dwa montaże klimatyzacji."
+  },
+  {
+    "id": 9,
     "author": "Maja Ganczarczyk",
     "rating": 5,
     "source": "google",
     "text": "KlimaTY naprawdę poprawiły klimat w moim mieszkaniu! Pan Daniel zaproponował wiele rozwiązań i wybraliśmy takie, które najbardziej odpowiadało na moje potrzeby i mieściło się w planowanym budżecie. Otrzymałam też odpowiedzi na wszystkie pytania związane z montażem oraz użytkowaniem klimatyzatora. Do tego było sympatycznie. Polecam!"
   },
   {
-    "id": 4,
+    "id": 10,
+    "author": "Anna",
+    "rating": 5,
+    "source": "google",
+    "text": "Polecam! Pełen profesjonalizm i super podejście do klienta. Zlecenie zrealizowane sprawnie, dokładnie i solidnie z zadbaniem o porządek i czystość po wykonanej instalacji. Wszystko zgodnie z wcześniejszymi ustaleniami. Cały przebieg montażu"
+  },
+  {
+    "id": 11,
+    "author": "Paweł B.",
+    "rating": 5,
+    "source": "google",
+    "text": "Montaż klimatyzacji wykonany bardzo sprawnie. Właściciel firmy, który zakładał u mnie urządzenie zadbał, aby do minimum ograniczyć zabrudzenie mieszkania spowodowane kuciem ścian. Również po markowych urządzeniach, z których ta firma"
+  },
+  {
+    "id": 12,
+    "author": "Nar Wer",
+    "rating": 5,
+    "source": "google",
+    "text": "Polecam firmę klimaTY,pełen profesjonalizm,terminowość, doradztwo i montaż a przede wszystkim konkurencyjna cena"
+  },
+  {
+    "id": 13,
+    "author": "Łukasz Chlebda",
+    "rating": 5,
+    "source": "google",
+    "text": "Pan Daniel okazał się świetnym profesjonalistą. Doradził w wyborze urządzenia, pomógł wybrać miejsce montażu, zadbał także o mój portfel wybierając dla mnie najlepsze rozwiązanie w rozsądnych pieniądzach. Indywidualne podejście i autentyczna troska o to, żeby klient był zadowolony. Zdecydowanie polecam!"
+  },
+  {
+    "id": 14,
+    "author": "Sylwia Krzymowska",
+    "rating": 5,
+    "source": "google",
+    "text": "Pan Daniel zakładał mi klimatyzacja na 3 mieszkaniach (najstarsza 3 lata temu). Wszystko działa bez zarzutu, dobrze dobrana moc a instalacja zamontowana estetycznie. Polecam"
+  },
+  {
+    "id": 15,
+    "author": "Jolanta Dam",
+    "rating": 5,
+    "source": "google",
+    "text": "KlimaTY -Polecam na 100% Doradztwo w pełnym zakresie.Dobry dobór energooszczędnych urządzeń i poprawne uwagi dotyczące możliwych rozwiązań montażowych, Wykonanie wg ustaleń i w"
+  },
+  {
+    "id": 16,
+    "author": "Łukasz Drapała",
+    "rating": 5,
+    "source": "google",
+    "text": "Pełen profesjonalizm, konkurencyjne ceny, doradztwo, rzetelnie wykonana robota w jeden dzień. Nie mam żadnych uwag. Klimatyzacja działa już kilka miesięcy bez żadnych zarzutów. Życzyłbym sobie samych takich fachowców."
+  },
+  {
+    "id": 17,
+    "author": "Michał M",
+    "rating": 5,
+    "source": "google",
+    "text": "Po mękach z firmą która zakładała u mnie klimatyzację, zdecydowałem się na kontakt z firmą klimaTY. Właściciel już przez telefon wymienił kilka możliwych powodów cieknącego urządzenia, na które poprzednik nie wpadł. Mimo dość skomplikowanej instalacji między stropami udało się problem rozwiązać w korzystnej cenie. Wreszcie nie cieknie :)"
+  },
+  {
+    "id": 18,
     "author": "Szymon Czerwiński",
     "rating": 5,
     "source": "google",
     "text": "Bardzo polecam! Chętnie dałbym 6 gwiazdek. Profesjonalne podejście, terminowość, bardzo dobre przygotowanie zarówno od strony sprzętu jak również wiedzy, świetny kontakt, wszystko super posprzątane po zakończeniu pracy."
   },
   {
-    "id": 5,
-    "author": "Michał M",
+    "id": 19,
+    "author": "Maciej Sawicki",
     "rating": 5,
     "source": "google",
-    "text": "Po mękach z firmą która zakładała u mnie klimatyzację, zdecydowałem się na kontakt z firmą klimaTY. Właściciel już przez telefon wymienił kilka możliwych powodów cieknącego urządzenia, na które poprzednik nie wpadł. Mimo dość skomplikowanej instalacji między stropami udało się problem rozwiązać w korzystnej cenie. Wreszcie nie cieknie :)"
+    "text": "Pełna profeska, bez problemu firma przygotowała podpięcie wody do odpływu, a później zamontowała samą klimatyzację. Słychać po samej rozmowie z właścicielem że się facet zna na robocie. Gorąco polecam!"
+  },
+  {
+    "id": 20,
+    "author": "h m",
+    "rating": 5,
+    "source": "google",
+    "text": "Sprawnie, terminowo, rzetelnie. Jednym słowem prawdziwy fachowiec. Ogromna wiedza połączona z bogatym doświadczeniem wpływa na fenimenalną jakość usług. Z całą odpowiedzialnością polecamy."
+  },
+  {
+    "id": 21,
+    "author": "Katarzyna Barcik",
+    "rating": 5,
+    "source": "google",
+    "text": "Profesjonalne doradztwo i montaż klimatyzacji w konkurencyjnej cenie. Duży plus za zabezpieczenie mieszkania i posprzątanie po montażu. Polecam!"
+  },
+  {
+    "id": 22,
+    "author": "Zosia N",
+    "rating": 5,
+    "source": "google",
+    "text": "Bardzo starannie i fachowo zrobiony serwis klimatyzatora, firma warta polecenia! Wykonawca bardzo uprzejmy, a do tego miły dla oka. :)"
+  },
+  {
+    "id": 23,
+    "author": "Karolina Mlostek",
+    "rating": 5,
+    "source": "google",
+    "text": "Polecam klimaty, super obsługa i mili panowie :)"
+  },
+  {
+    "id": 24,
+    "author": "Sebastian Garstecki",
+    "rating": 5,
+    "source": "google",
+    "text": "Profesjonalne podejscie do klienta i fachowosc! Dziekuje za dobra obsluge!!"
+  },
+  {
+    "id": 25,
+    "author": "Michał Mastrzykowski",
+    "rating": 5,
+    "source": "google",
+    "text": "Jestem zadowolony! Pan na początku wyjaśnił jak będzie przebiegać montaż, uzyskałem również odpowiedzi na nurtujące mnie pytania. Poszło szybko i sprawnie! Polecam."
+  },
+  {
+    "id": 26,
+    "author": "Tomasz „Kyouke” Sorka",
+    "rating": 5,
+    "source": "google",
+    "text": "Profesjonalizm, wysoka kultura osobista i dobre ceny. Polecam z pełną odpowiedzialnością"
+  },
+  {
+    "id": 27,
+    "author": "Paweł Widanka",
+    "rating": 5,
+    "source": "google",
+    "text": "Szybki i profesjonalny montaż. Polecam w 100% :)"
+  },
+  {
+    "id": 28,
+    "author": "Karol K.",
+    "rating": 5,
+    "source": "google",
+    "text": "Terminowo, czysto i bez komplikacji. Jestem bardzo zadowolony."
+  },
+  {
+    "id": 29,
+    "author": "Impartial Mascarpone",
+    "rating": 5,
+    "source": "google",
+    "text": "Uprzejmie, pozytywnie i profesjonalnie, polecam!"
+  },
+  {
+    "id": 30,
+    "author": "J. B.",
+    "rating": 5,
+    "source": "google",
+    "text": "Uczciwy, komunikatywny."
+  },
+  {
+    "id": 31,
+    "author": "Witold Mirek",
+    "rating": 5,
+    "source": "google",
+    "text": "Bardzo polecam :-)"
+  },
+  {
+    "id": 32,
+    "author": "kazek szef",
+    "rating": 5,
+    "source": "google",
+    "text": "Polecam tego Pana."
+  },
+  {
+    "id": 33,
+    "author": "Grzegorz Podwika",
+    "rating": 5,
+    "source": "google",
+    "text": "Rzetelnie wytłumaczone opcje, sprawne wykonanie, posprzątane elegancko po sobie. Polecam!"
   }
 ]

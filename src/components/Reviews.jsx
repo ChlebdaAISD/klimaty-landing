@@ -3,9 +3,11 @@ import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Star, CaretLeft, CaretRight, ArrowRight } from '@phosphor-icons/react';
-import reviewsData from '../data/reviews.json';
+import allReviews from '../data/reviews.json';
 
 gsap.registerPlugin(ScrollTrigger);
+
+const reviewsData = allReviews.filter((r) => r.id >= 1 && r.id <= 5);
 
 // For infinite loop we clone: [last3] [all] [first3]
 // Desktop shows 3 cards, mobile shows 1
@@ -48,12 +50,6 @@ export default function Reviews() {
   const trackIndex = current + cloneCount;
 
   const getOffset = useCallback((idx) => {
-    // Each card occupies (100% / visibleCount) of the container
-    // offset = idx * (cardWidth + gap) but in percentages + gap px
-    // Using calc: idx * (100%/visible) + idx * gap - but we need gap between cards only
-    // Simpler: container has gap, so offset = idx * ((containerWidth + gap) / visible) - gap-correction
-    // Let's use a percentage-based approach:
-    // trackTranslate = -(idx * (100/visible))% adjusted for gaps
     return idx;
   }, [visibleCount]);
 
