@@ -30,6 +30,7 @@ export default function Layout() {
     { label: 'O nas', to: '/o-nas/' },
     { label: 'Realizacje', to: '/realizacje/' },
     { label: 'Opinie', to: '/opinie/' },
+    { label: 'FAQ', to: '/faq/' },
     { label: 'Kontakt', to: '/kontakt/' },
   ];
 

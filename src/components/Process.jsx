@@ -180,7 +180,7 @@ export default function Process() {
         <div className="mt-20 flex justify-center">
           <Link
             to="/o-nas/"
-            className="group inline-flex items-center gap-3 text-accent font-bold text-sm uppercase tracking-widest hover:gap-4 transition-all"
+            className="group inline-flex items-center gap-3 text-accent font-bold text-sm uppercase tracking-widest hover:gap-4 transition-all underline underline-offset-4"
           >
             Dowiedz się więcej o nas i o tym jak pracujemy
             <ArrowRight size={18} weight="bold" />

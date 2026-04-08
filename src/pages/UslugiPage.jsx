@@ -79,7 +79,7 @@ export default function UslugiPage() {
               <h3 className="text-2xl font-bold font-heading text-white leading-tight">{heading}</h3>
               <p className="text-sm text-zinc-400 leading-relaxed flex-1">{short}</p>
               <PlaceholderContent compact />
-              <Link to={link} className="inline-flex items-center gap-2 text-accent font-bold text-sm uppercase tracking-widest hover:gap-3 transition-all">
+              <Link to={link} className="inline-flex items-center gap-2 text-accent font-bold text-sm uppercase tracking-widest hover:gap-3 transition-all underline underline-offset-4">
                 {linkLabel} <ArrowRight size={16} weight="bold" />
               </Link>
             </article>

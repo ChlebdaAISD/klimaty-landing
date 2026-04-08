@@ -174,9 +174,9 @@ export default function CityPage({ slug }) {
               to={`/${c.slug}/`}
               className="group bg-[#0d0d10] border border-white/5 hover:border-accent/40 p-5 flex items-center gap-3 transition-colors duration-300"
             >
-              <MapPin size={20} weight="duotone" className="text-accent shrink-0" />
+              <MapPin size={16} weight="duotone" className="text-accent shrink-0" />
               <span className="text-sm font-bold text-white group-hover:text-accent transition-colors">{c.name}</span>
-              <ArrowRight size={14} weight="bold" className="text-zinc-600 group-hover:text-accent ml-auto transition-colors shrink-0" />
+              <ArrowRight size={16} weight="bold" className="text-zinc-600 group-hover:text-accent ml-auto transition-colors shrink-0" />
             </Link>
           ))}
         </div>

@@ -38,7 +38,7 @@ export default function Hero() {
     <section id="hero-section" ref={sectionRef} className="relative min-h-[100dvh] w-full flex items-center pt-24 pb-32 overflow-hidden bg-background">
       
       {/* Abstract Background Element (Orange Sun/Circle from Aero Reference) */}
-      <div className="absolute top-[10%] right-[10%] w-[500px] h-[500px] bg-accent/20 rounded-none blur-[100px] pointer-events-none z-0"></div>
+      <div className="hidden md:block absolute top-[10%] right-[10%] w-[500px] h-[500px] bg-accent/20 rounded-none blur-[100px] pointer-events-none z-0"></div>
 
       <div className="max-w-7xl mx-auto px-8 w-full relative z-10 flex flex-col lg:flex-row items-center gap-16">
         

@@ -215,7 +215,7 @@ export default function Reviews() {
         <div className="mt-12 flex justify-center">
           <Link
             to="/opinie/"
-            className="group inline-flex items-center gap-3 text-accent font-bold text-sm uppercase tracking-widest hover:gap-4 transition-all"
+            className="group inline-flex items-center gap-3 text-accent font-bold text-sm uppercase tracking-widest hover:gap-4 transition-all underline underline-offset-4"
           >
             Zobacz wszystkie opinie
             <ArrowRight size={18} weight="bold" />

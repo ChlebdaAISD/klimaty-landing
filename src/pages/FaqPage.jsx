@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { CaretDown, Wrench, GearSix, CurrencyCircleDollar, Lightbulb } from '@phosphor-icons/react';
+import React from 'react';
+import { Wrench, GearSix, CurrencyCircleDollar, Lightbulb } from '@phosphor-icons/react';
 import SEOHead from '../components/SEOHead';
 import PageHero from '../components/PageHero';
 import DarkSection from '../components/DarkSection';
@@ -83,28 +83,14 @@ const schema = [
 ];
 
 function FaqItem({ question, answer }) {
-  const [open, setOpen] = useState(false);
   return (
-    <div className="border-b border-white/5">
-      <button
-        onClick={() => setOpen((s) => !s)}
-        className="w-full flex items-center justify-between gap-4 py-6 text-left group"
-        aria-expanded={open}
-      >
-        <span className="text-lg md:text-xl font-heading font-semibold text-white group-hover:text-accent transition-colors">
-          {question}
-        </span>
-        <CaretDown
-          size={20}
-          weight="bold"
-          className={`text-accent shrink-0 transition-transform duration-300 ${open ? 'rotate-180' : ''}`}
-        />
-      </button>
-      {open && (
-        <div className="pb-6 text-zinc-400 text-base leading-relaxed font-sans">
-          {answer}
-        </div>
-      )}
+    <div className="border-b border-white/5 py-6">
+      <h3 className="text-lg md:text-xl font-heading font-semibold text-white mb-3">
+        {question}
+      </h3>
+      <p className="text-zinc-400 text-base leading-relaxed font-sans">
+        {answer}
+      </p>
     </div>
   );
 }

@@ -182,7 +182,7 @@ export default function Gallery() {
         <div className="mt-12 flex justify-center">
           <Link
             to="/realizacje/"
-            className="group inline-flex items-center gap-3 text-accent font-bold text-sm uppercase tracking-widest hover:gap-4 transition-all"
+            className="group inline-flex items-center gap-3 text-accent font-bold text-sm uppercase tracking-widest hover:gap-4 transition-all underline underline-offset-4"
           >
             Zobacz pełne portfolio realizacji
             <ArrowRight size={18} weight="bold" />
