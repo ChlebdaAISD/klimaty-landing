@@ -31,14 +31,16 @@ export default function Features() {
 
   return (
     <section id="onas" className="py-32 bg-[#09090b] relative z-10 border-t border-white/5">
-      <div className="max-w-5xl mx-auto px-8 relative">
-
+      <div className="max-w-7xl mx-auto px-8">
         <div className="mb-16">
           <h2 className="text-sm font-mono text-accent uppercase tracking-widest font-bold mb-4">Dlaczego my?</h2>
           <h3 className="text-4xl md:text-5xl font-heading font-semibold text-white tracking-tight leading-none">
             Precyzja jako standard, <br />nie jako dodatek.
           </h3>
         </div>
+      </div>
+
+      <div className="max-w-5xl mx-auto px-8 relative">
 
         <div className="flex flex-col gap-10 md:gap-16 pb-8">
           {cards.map((card, i) => (
