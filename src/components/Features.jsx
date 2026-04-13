@@ -33,19 +33,10 @@ export default function Features() {
     <section id="onas" className="py-32 bg-[#09090b] relative z-10 border-t border-white/5">
       <div className="max-w-5xl mx-auto px-8 relative">
 
-        {/* DESKTOP: sticky header with full subtitle */}
-        <div className="hidden md:block sticky top-[120px] z-[5] mb-12 max-w-2xl bg-[#09090b]/80 backdrop-blur-md py-4 rounded-none">
+        <div className="mb-16">
           <h2 className="text-sm font-mono text-accent uppercase tracking-widest font-bold mb-4">Dlaczego my?</h2>
           <h3 className="text-4xl md:text-5xl font-heading font-semibold text-white tracking-tight leading-none">
             Precyzja jako standard, <br />nie jako dodatek.
-          </h3>
-        </div>
-
-        {/* MOBILE: sticky header - sits below fixed navbar */}
-        <div className="md:hidden sticky top-[70px] z-[6] mb-4 bg-[#09090b]/90 backdrop-blur-md py-3">
-          <h2 className="text-xs font-mono text-accent uppercase tracking-widest font-bold mb-3">Dlaczego my?</h2>
-          <h3 className="text-3xl font-heading font-semibold text-white tracking-tight leading-tight">
-            Precyzja jako standard,<br />nie jako dodatek.
           </h3>
         </div>
 
