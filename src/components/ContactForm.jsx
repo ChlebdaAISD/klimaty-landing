@@ -8,6 +8,16 @@ const WEBHOOK_URL =
 const AUTH_HEADER_NAME = import.meta.env.VITE_N8N_NAME;
 const AUTH_HEADER_VALUE = import.meta.env.VITE_N8N_VALUE;
 
+// TEMP DEBUG — remove after confirming env vars reach bundle
+if (typeof window !== 'undefined') {
+  console.log('[contact-form env debug]', {
+    hasName: Boolean(AUTH_HEADER_NAME),
+    name: AUTH_HEADER_NAME,
+    hasValue: Boolean(AUTH_HEADER_VALUE),
+    valuePreview: AUTH_HEADER_VALUE ? `${AUTH_HEADER_VALUE.slice(0, 4)}...` : null,
+  });
+}
+
 const initialState = { name: '', phone: '', message: '' };
 
 export default function ContactForm() {
