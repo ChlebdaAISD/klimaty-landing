@@ -45,10 +45,9 @@ export default function NotFoundPage() {
       <DarkSection eyebrow="Nawigacja" h2="Może szukasz jednej z tych stron?">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {[
-            { to: '/uslugi/', label: 'Usługi' },
             { to: '/montaz-klimatyzacji/', label: 'Montaż klimatyzacji' },
-            { to: '/serwis-klimatyzacji/', label: 'Serwis klimatyzacji' },
-            { to: '/sprzedaz-klimatyzacji/', label: 'Sprzedaż klimatyzacji' },
+            { to: '/serwis-klimatyzacji/', label: 'Serwis i naprawa klimatyzacji' },
+            { to: '/instalacje-pod-klimatyzacje/', label: 'Instalacje pod klimatyzacje' },
             { to: '/o-nas/', label: 'O nas' },
             { to: '/realizacje/', label: 'Realizacje' },
             { to: '/opinie/', label: 'Opinie' },

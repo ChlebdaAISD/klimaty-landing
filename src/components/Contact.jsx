@@ -1,19 +1,7 @@
-import React, { useState } from 'react';
-import MotionButton from './ui/MotionButton';
+import React from 'react';
+import ContactForm from './ContactForm';
 
 export default function Contact() {
-  const [formData, setFormData] = useState({ name: '', phone: '', message: '' });
-  const [isSent, setIsSent] = useState(false);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setTimeout(() => {
-      setIsSent(true);
-      setFormData({ name: '', phone: '', message: '' });
-      setTimeout(() => setIsSent(false), 5000);
-    }, 1000);
-  };
-
   return (
     <section id="kontakt" className="py-32 bg-[#09090b] relative border-t border-white/5">
       <div className="max-w-7xl mx-auto px-8 relative z-10">
@@ -51,60 +39,8 @@ export default function Contact() {
             </div>
           </div>
 
-          <div className="w-full lg:w-1/2 bg-[#18181b] border border-white/5 rounded-none p-8 md:p-12 relative overflow-hidden">
-            {isSent && (
-              <div className="absolute inset-0 z-20 bg-[#18181b] flex flex-col items-center justify-center text-center p-8 animate-in fade-in duration-300">
-                <div className="w-16 h-16 bg-emerald-500/20 text-emerald-500 rounded-none flex items-center justify-center mb-6">
-                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                </div>
-                <h4 className="text-2xl font-bold text-white mb-2">Formularz wysłany.</h4>
-                <p className="text-zinc-400">Skontaktujemy się z Tobą najszybciej jak to możliwe.</p>
-              </div>
-            )}
-            
-            <form onSubmit={handleSubmit} className="flex flex-col gap-6 relative z-10 text-white">
-              <div className="flex flex-col gap-2">
-                <label htmlFor="name" className="text-xs font-mono uppercase text-zinc-500 tracking-wider">Imię i nazwisko</label>
-                <input 
-                  type="text" 
-                  id="name"
-                  required
-                  value={formData.name}
-                  onChange={e => setFormData({...formData, name: e.target.value})}
-                  placeholder="Jan Kowalski"
-                  className="bg-zinc-900 border border-white/10 rounded-none px-4 py-4 text-white placeholder-white/20 focus:outline-none focus:border-accent transition-colors"
-                />
-              </div>
-              
-              <div className="flex flex-col gap-2">
-                <label htmlFor="phone" className="text-xs font-mono uppercase text-zinc-500 tracking-wider">Numer telefonu</label>
-                <input 
-                  type="tel" 
-                  id="phone"
-                  required
-                  value={formData.phone}
-                  onChange={e => setFormData({...formData, phone: e.target.value})}
-                  placeholder="123 456 789"
-                  className="bg-zinc-900 border border-white/10 rounded-none px-4 py-4 text-white placeholder-white/20 focus:outline-none focus:border-accent transition-colors"
-                />
-              </div>
-
-              <div className="flex flex-col gap-2">
-                <label htmlFor="message" className="text-xs font-mono uppercase text-zinc-500 tracking-wider">Wiadomość (opcjonalnie)</label>
-                <textarea 
-                  id="message"
-                  value={formData.message}
-                  onChange={e => setFormData({...formData, message: e.target.value})}
-                  placeholder="W czym możemy pomóc?"
-                  rows="3"
-                  className="bg-zinc-900 border border-white/10 rounded-none px-4 py-4 text-white placeholder-white/20 focus:outline-none focus:border-accent transition-colors resize-none"
-                ></textarea>
-              </div>
-              
-              <div className="mt-4 flex">
-                <MotionButton label="Wyślij zapytanie" variant="primary" context="dark" className="w-full justify-center" />
-              </div>
-            </form>
+          <div className="w-full lg:w-1/2">
+            <ContactForm />
           </div>
           
         </div>

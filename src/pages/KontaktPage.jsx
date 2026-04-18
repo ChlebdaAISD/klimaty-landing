@@ -1,12 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Phone, EnvelopeSimple, MapPin, Clock, ArrowRight } from '@phosphor-icons/react';
+import { Phone, EnvelopeSimple, MapPin } from '@phosphor-icons/react';
 import SEOHead from '../components/SEOHead';
 import PageHero from '../components/PageHero';
 import DarkSection from '../components/DarkSection';
-import PlaceholderContent from '../components/PlaceholderContent';
+import ContactForm from '../components/ContactForm';
 import { seoMeta, SITE_URL } from '../data/seoMeta';
-import { cities } from '../data/cities';
 
 const meta = seoMeta['/kontakt/'];
 
@@ -85,43 +83,12 @@ export default function KontaktPage() {
         </div>
       </DarkSection>
 
-      <DarkSection variant="alt" eyebrow="Formularz" h2="Jak wygląda formularz wyceny?">
-        <PlaceholderContent label="Formularz kontaktowy — wkrótce" />
-      </DarkSection>
-
-      <DarkSection eyebrow="Obszar" h2="Gdzie działamy?">
+      <DarkSection variant="alt" eyebrow="Formularz" h2="Napisz do nas">
         <p className="text-zinc-400 font-sans text-lg leading-relaxed max-w-3xl mb-10">
-          Obsługujemy Kraków oraz okoliczne miasta i gminy. Dojazd jest bezpłatny w obrębie Małopolski.
+          Zostaw dane kontaktowe i krótką wiadomość — odezwiemy się w ciągu 24 godzin.
         </p>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-          {cities.map((city) => (
-            <Link
-              key={city.slug}
-              to={`/${city.slug}/`}
-              className="group bg-[#0d0d10] border border-white/5 hover:border-accent/40 p-5 flex items-center gap-3 transition-colors duration-300"
-            >
-              <MapPin size={16} weight="duotone" className="text-accent shrink-0" />
-              <span className="text-sm font-bold text-white group-hover:text-accent transition-colors">{city.name}</span>
-              <ArrowRight size={16} weight="bold" className="text-zinc-600 group-hover:text-accent ml-auto transition-colors shrink-0" />
-            </Link>
-          ))}
-        </div>
-      </DarkSection>
-
-      <DarkSection variant="alt" eyebrow="Godziny" h2="Kiedy jesteśmy dostępni?">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl">
-          <div className="bg-[#0d0d10] border border-white/5 p-8 flex flex-col gap-4">
-            <Clock size={32} weight="duotone" className="text-accent" />
-            <h3 className="text-xl font-heading font-bold text-white">Dni robocze</h3>
-            <p className="text-lg text-zinc-300">Poniedziałek – Piątek</p>
-            <p className="text-2xl font-heading font-semibold text-accent">08:00 – 18:00</p>
-          </div>
-          <div className="bg-[#0d0d10] border border-white/5 p-8 flex flex-col gap-4">
-            <Clock size={32} weight="duotone" className="text-accent" />
-            <h3 className="text-xl font-heading font-bold text-white">Sobota</h3>
-            <p className="text-lg text-zinc-300">Dyżur telefoniczny</p>
-            <p className="text-2xl font-heading font-semibold text-accent">09:00 – 14:00</p>
-          </div>
+        <div className="max-w-2xl">
+          <ContactForm />
         </div>
       </DarkSection>
     </>

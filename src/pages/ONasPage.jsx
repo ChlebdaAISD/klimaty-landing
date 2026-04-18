@@ -161,17 +161,7 @@ export default function ONasPage() {
         </div>
       </DarkSection>
 
-      <DarkSection eyebrow="Współpraca" h2="Z jakimi markami współpracujemy?">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {['Gree', 'LG', 'Samsung', 'Mitsubishi Electric', 'Daikin', 'Panasonic', 'Haier', 'Fujitsu'].map((brand) => (
-            <div key={brand} className="bg-[#0d0d10] border border-white/5 p-6 flex items-center justify-center">
-              <span className="text-lg font-heading font-bold text-white">{brand}</span>
-            </div>
-          ))}
-        </div>
-      </DarkSection>
-
-      <DarkSection variant="alt" eyebrow="Obszar działania" h2="Gdzie działamy?">
+      <DarkSection eyebrow="Obszar działania" h2="Gdzie działamy?">
         <p className="text-zinc-400 font-sans text-lg leading-relaxed max-w-3xl mb-10">
           Działamy w Krakowie i okolicznych gminach. Dojazd na terenie Małopolski jest bezpłatny.
         </p>

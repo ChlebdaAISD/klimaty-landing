@@ -114,7 +114,7 @@ export default function CityPage({ slug }) {
             className="group bg-[#0d0d10] border border-white/5 hover:border-accent/40 p-8 flex flex-col gap-5 transition-colors duration-300"
           >
             <GearSix size={32} weight="duotone" className="text-accent" />
-            <h3 className="text-2xl font-heading font-bold text-white">Serwis klimatyzacji</h3>
+            <h3 className="text-2xl font-heading font-bold text-white">Serwis i naprawa klimatyzacji</h3>
             <p className="text-sm text-zinc-400 leading-relaxed flex-1">
               Przeglądy, czyszczenie, naprawa i uzupełnianie czynnika chłodniczego — w {city.nameLocative} i okolicy.
             </p>
@@ -123,13 +123,13 @@ export default function CityPage({ slug }) {
             </span>
           </Link>
           <Link
-            to="/sprzedaz-klimatyzacji/"
+            to="/instalacje-pod-klimatyzacje/"
             className="group bg-[#0d0d10] border border-white/5 hover:border-accent/40 p-8 flex flex-col gap-5 transition-colors duration-300"
           >
             <Wrench size={32} weight="duotone" className="text-accent" />
-            <h3 className="text-2xl font-heading font-bold text-white">Sprzedaż klimatyzacji</h3>
+            <h3 className="text-2xl font-heading font-bold text-white">Instalacje pod klimatyzacje</h3>
             <p className="text-sm text-zinc-400 leading-relaxed flex-1">
-              Doradzimy i dobierzemy urządzenie dopasowane do Twojego domu lub biura w {city.nameLocative}.
+              Przewody i infrastruktura układana na etapie budowy domu w {city.nameLocative} — zanim zamontujemy urządzenia.
             </p>
             <span className="inline-flex items-center gap-2 text-accent font-bold text-sm uppercase tracking-widest group-hover:gap-3 transition-all">
               Więcej <ArrowRight size={16} weight="bold" />

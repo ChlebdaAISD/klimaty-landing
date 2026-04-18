@@ -1,6 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, CheckCircle, Wrench, House, Buildings, MapPin, ShieldCheck } from '@phosphor-icons/react';
+import {
+  ArrowRight,
+  CheckCircle,
+  Wrench,
+  House,
+  Buildings,
+  MapPin,
+  ShieldCheck,
+  Phone,
+  Snowflake,
+  Lightbulb,
+  Gauge,
+  Sun,
+  Thermometer,
+} from '@phosphor-icons/react';
 import SEOHead from '../components/SEOHead';
 import PageHero from '../components/PageHero';
 import DarkSection from '../components/DarkSection';
@@ -50,6 +64,26 @@ const processSteps = [
   { num: '05', title: 'Uruchomienie i instruktaż', desc: 'Test szczelności, napełnienie czynnikiem, instruktaż obsługi, dokumenty gwarancyjne.' },
 ];
 
+const brands = ['Gree', 'LG', 'Samsung', 'Mitsubishi Electric', 'Daikin', 'Panasonic', 'Haier', 'Fujitsu'];
+
+const advisorySteps = [
+  {
+    Icon: Lightbulb,
+    title: '1. Rozmowa',
+    desc: 'Pytamy o potrzeby, budżet i oczekiwania. Wszystko przez telefon lub na miejscu.',
+  },
+  {
+    Icon: Gauge,
+    title: '2. Dobór urządzenia',
+    desc: 'Proponujemy 2-3 opcje dopasowane do Twoich warunków i portfela.',
+  },
+  {
+    Icon: Snowflake,
+    title: '3. Oferta pakietowa',
+    desc: 'Urządzenie + montaż + uruchomienie + gwarancja w jednej cenie, bez ukrytych kosztów.',
+  },
+];
+
 export default function MontazPage() {
   return (
     <>
@@ -81,19 +115,19 @@ export default function MontazPage() {
         </div>
       </DarkSection>
 
-      <DarkSection variant="alt" eyebrow="Cennik" h2="Ile kosztuje montaż klimatyzacji?">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-          {['Split pojedynczy', 'Multi-split 2-3 jedn.', 'Instalacje nietypowe'].map((t, i) => (
-            <div key={i} className="bg-[#0d0d10] border border-white/5 p-8 flex flex-col gap-4">
-              <Wrench size={32} weight="duotone" className="text-accent" />
-              <h3 className="text-xl font-heading font-bold text-white">{t}</h3>
-              <p className="text-sm text-zinc-400 leading-relaxed">
-                Każdy montaż wyceniamy indywidualnie po oględzinach. Bezpłatna wizyta i konkretna oferta bez zobowiązań.
-              </p>
-            </div>
-          ))}
+      <DarkSection variant="alt" eyebrow="Koszt" h2="Ile kosztuje montaż klimatyzacji?">
+        <div className="bg-[#0d0d10] border border-white/5 p-8 md:p-10 flex flex-col gap-5 max-w-3xl">
+          <Phone size={32} weight="duotone" className="text-accent" />
+          <p className="text-zinc-300 font-sans text-base md:text-lg leading-relaxed">
+            Koszt montażu zależy od wielu czynników — liczby jednostek, zakresu prac, warunków technicznych i wybranego urządzenia. Każde zlecenie wyceniamy indywidualnie po bezpłatnej wizycie.
+          </p>
+          <a
+            href="tel:883297379"
+            className="inline-flex items-center gap-3 text-accent font-heading font-bold text-xl md:text-2xl hover:gap-4 transition-all"
+          >
+            883 297 379 <ArrowRight size={20} weight="bold" />
+          </a>
         </div>
-        <PlaceholderContent label="Pełna tabela cenowa — wkrótce" />
       </DarkSection>
 
       <DarkSection eyebrow="Zastosowania" h2="Czy montaż pasuje do domu i biura?">
@@ -118,10 +152,77 @@ export default function MontazPage() {
       </DarkSection>
 
       <DarkSection variant="alt" eyebrow="Technologia" h2="Czym różni się split od multi-split?">
-        <PlaceholderContent />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <article className="bg-[#0d0d10] border border-white/5 p-8 flex flex-col gap-5">
+            <Snowflake size={32} weight="duotone" className="text-accent" />
+            <h3 className="text-2xl font-heading font-bold text-white">System split</h3>
+            <p className="text-sm text-zinc-400 leading-relaxed">
+              Jedna jednostka zewnętrzna obsługuje jedno pomieszczenie. Prosty, niezawodny, idealny dla mniejszych przestrzeni.
+            </p>
+            <PlaceholderContent compact />
+          </article>
+          <article className="bg-[#0d0d10] border border-white/5 p-8 flex flex-col gap-5">
+            <Snowflake size={32} weight="duotone" className="text-accent" />
+            <h3 className="text-2xl font-heading font-bold text-white">System multi-split</h3>
+            <p className="text-sm text-zinc-400 leading-relaxed">
+              Jedna jednostka zewnętrzna obsługuje 2-5 pomieszczeń. Oszczędność miejsca na elewacji i energii.
+            </p>
+            <PlaceholderContent compact />
+          </article>
+        </div>
       </DarkSection>
 
-      <DarkSection eyebrow="Obszar działania" h2="Gdzie montujemy klimatyzację?">
+      <DarkSection eyebrow="Marki" h2="Z jakimi markami klimatyzatorów pracujemy?">
+        <p className="text-zinc-400 font-sans text-lg leading-relaxed max-w-3xl mb-10">
+          Montujemy i dobieramy klimatyzacje sprawdzonych producentów. Każda marka to inna charakterystyka — pomagamy wybrać właściwą.
+        </p>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+          {brands.map((brand) => (
+            <div key={brand} className="bg-[#0d0d10] border border-white/5 p-6 flex items-center justify-center">
+              <span className="text-lg font-heading font-bold text-white">{brand}</span>
+            </div>
+          ))}
+        </div>
+        <PlaceholderContent label="Szczegółowe opisy marek — wkrótce" />
+      </DarkSection>
+
+      <DarkSection variant="alt" eyebrow="Doradztwo" h2="Jak wygląda bezpłatne doradztwo i dobór urządzenia?">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {advisorySteps.map(({ Icon, title, desc }, i) => (
+            <div key={i} className="bg-[#0d0d10] border border-white/5 p-6 flex flex-col gap-4">
+              <Icon size={32} weight="duotone" className="text-accent" />
+              <h3 className="text-lg font-heading font-bold text-white">{title}</h3>
+              <p className="text-sm text-zinc-400 leading-relaxed">{desc}</p>
+            </div>
+          ))}
+        </div>
+      </DarkSection>
+
+      <DarkSection eyebrow="Ogrzewanie" h2="Czy klimatyzacja może ogrzewać?">
+        <p className="text-zinc-400 font-sans text-lg leading-relaxed max-w-3xl mb-10">
+          Nowoczesne klimatyzatory to urządzenia dwukierunkowe — chłodzą latem i skutecznie grzeją zimą. Wielu naszych klientów montuje klimatyzację głównie pod ogrzewanie biur, garaży i pomieszczeń, w których zwykła grzejniki są nieefektywne.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <article className="bg-[#0d0d10] border border-white/5 p-8 flex flex-col gap-5">
+            <Thermometer size={32} weight="duotone" className="text-accent" />
+            <h3 className="text-xl font-heading font-bold text-white">Funkcja grzania</h3>
+            <p className="text-sm text-zinc-400 leading-relaxed">
+              Klimatyzacja z pompą ciepła działa dwukierunkowo — jedna jednostka chłodzi latem i ogrzewa zimą, nawet przy temperaturach poniżej zera.
+            </p>
+            <PlaceholderContent compact />
+          </article>
+          <article className="bg-[#0d0d10] border border-white/5 p-8 flex flex-col gap-5">
+            <Sun size={32} weight="duotone" className="text-accent" />
+            <h3 className="text-xl font-heading font-bold text-white">Kiedy się opłaca?</h3>
+            <p className="text-sm text-zinc-400 leading-relaxed">
+              W biurach, garażach, pomieszczeniach dogrzewanych punktowo i wszędzie tam, gdzie klasyczne ogrzewanie nie jest opłacalne lub potrzebujesz szybkiej reakcji termicznej.
+            </p>
+            <PlaceholderContent compact />
+          </article>
+        </div>
+      </DarkSection>
+
+      <DarkSection variant="alt" eyebrow="Obszar działania" h2="Gdzie montujemy klimatyzację?">
         <p className="text-zinc-400 font-sans text-lg leading-relaxed max-w-3xl mb-10">
           Montaż klimatyzacji realizujemy w Krakowie i okolicznych miejscowościach. Dojazd w obrębie Małopolski jest bezpłatny.
         </p>
@@ -140,7 +241,7 @@ export default function MontazPage() {
         </div>
       </DarkSection>
 
-      <DarkSection variant="alt" eyebrow="Dlaczego my" h2="Dlaczego warto wybrać klimaTY do montażu?">
+      <DarkSection eyebrow="Dlaczego my" h2="Dlaczego warto wybrać klimaTY do montażu?">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
             { Icon: ShieldCheck, title: 'F-Gaz i SEP', desc: 'Pełne uprawnienia i certyfikaty wymagane przy pracach z czynnikami chłodniczymi.' },

@@ -12,12 +12,6 @@ export const seoMeta = {
     h1: 'Klimatyzacja Kraków — montaż, serwis i sprzedaż',
     canonical: `${SITE_URL}/`,
   },
-  '/uslugi/': {
-    title: 'Usługi klimatyzacyjne Kraków — Oferta | klimaTY',
-    description: 'Kompleksowe usługi klimatyzacyjne: montaż, serwis, sprzedaż i doradztwo. Obsługujemy Kraków i okolice. Certyfikat F-Gaz. Sprawdź naszą ofertę!',
-    h1: 'Usługi klimatyzacyjne — nasza oferta',
-    canonical: `${SITE_URL}/uslugi/`,
-  },
   '/montaz-klimatyzacji/': {
     title: 'Montaż klimatyzacji Kraków — Profesjonalnie | klimaTY',
     description: 'Profesjonalny montaż klimatyzacji w Krakowie. Wiercenie bezpyłowe, czysta instalacja w 4-6h. F-Gaz, SEP. 1000+ montaży. Bezpłatna wycena — zadzwoń!',
@@ -25,16 +19,24 @@ export const seoMeta = {
     canonical: `${SITE_URL}/montaz-klimatyzacji/`,
   },
   '/serwis-klimatyzacji/': {
-    title: 'Serwis klimatyzacji Kraków — Przeglądy i naprawa | klimaTY',
-    description: 'Profesjonalny serwis klimatyzacji w Krakowie. Przeglądy sezonowe, czyszczenie, naprawa. Certyfikat F-Gaz. Obsługa gwarancyjna i pogwarancyjna. Zadzwoń!',
-    h1: 'Serwis klimatyzacji Kraków',
+    title: 'Serwis i naprawa klimatyzacji Kraków | klimaTY',
+    description: 'Serwis, czyszczenie, dezynfekcja i naprawa klimatyzacji w Krakowie. Certyfikat F-Gaz. Obsługa wszystkich marek. Bezpłatna wycena — zadzwoń!',
+    h1: 'Serwis i naprawa klimatyzacji Kraków',
     canonical: `${SITE_URL}/serwis-klimatyzacji/`,
   },
+  '/instalacje-pod-klimatyzacje/': {
+    title: 'Instalacje pod klimatyzacje Kraków — na etapie budowy | klimaTY',
+    description: 'Instalacje pod klimatyzacje w Krakowie — układanie przewodów na etapie budowy domu lub remontu. Później czysty montaż urządzeń bez kucia ścian.',
+    h1: 'Instalacje pod klimatyzacje Kraków',
+    canonical: `${SITE_URL}/instalacje-pod-klimatyzacje/`,
+  },
+  // Safety net for in-flight SPA navigation to the old URL before the 301 fires.
+  // Canonical points to the new URL.
   '/sprzedaz-klimatyzacji/': {
-    title: 'Sprzedaż klimatyzacji Kraków — Najlepsze marki | klimaTY',
-    description: 'Sprzedaż klimatyzacji w Krakowie. Gree, LG, Samsung, Mitsubishi, Daikin. Doradzimy i dobierzemy idealne urządzenie. Bezpłatna konsultacja! Zadzwoń.',
-    h1: 'Sprzedaż klimatyzacji Kraków — dobierz idealne urządzenie',
-    canonical: `${SITE_URL}/sprzedaz-klimatyzacji/`,
+    title: 'Instalacje pod klimatyzacje Kraków — na etapie budowy | klimaTY',
+    description: 'Instalacje pod klimatyzacje w Krakowie — układanie przewodów na etapie budowy domu lub remontu. Później czysty montaż urządzeń bez kucia ścian.',
+    h1: 'Instalacje pod klimatyzacje Kraków',
+    canonical: `${SITE_URL}/instalacje-pod-klimatyzacje/`,
   },
   '/o-nas/': {
     title: 'O nas — klimaTY | Klimatyzacja Kraków od 15 lat',
