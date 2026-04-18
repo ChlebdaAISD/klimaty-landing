@@ -6,6 +6,7 @@ const WEBHOOK_URL =
   'https://adrian264-20264.wykr.es/webhook/klimaty_kontakt';
 
 const AUTH_HEADER = import.meta.env.n8n_HEADER;
+const AUTH_HEADER_NAME = 'klimaty-n8n';
 
 const initialState = { name: '', phone: '', message: '' };
 
@@ -29,7 +30,7 @@ export default function ContactForm() {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          ...(AUTH_HEADER ? { Authorization: AUTH_HEADER } : {}),
+          ...(AUTH_HEADER ? { [AUTH_HEADER_NAME]: AUTH_HEADER } : {}),
         },
         body: JSON.stringify({
           name: formData.name.trim(),
