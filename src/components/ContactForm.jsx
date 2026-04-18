@@ -15,6 +15,10 @@ if (typeof window !== 'undefined') {
     name: AUTH_HEADER_NAME,
     hasValue: Boolean(AUTH_HEADER_VALUE),
     valuePreview: AUTH_HEADER_VALUE ? `${AUTH_HEADER_VALUE.slice(0, 4)}...` : null,
+    webhookUrlFromEnv: import.meta.env.VITE_KLIMATY_CONTACT_WEBHOOK,
+    allViteEnvKeys: Object.keys(import.meta.env).filter((k) => k.startsWith('VITE_')),
+    mode: import.meta.env.MODE,
+    prod: import.meta.env.PROD,
   });
 }
 
