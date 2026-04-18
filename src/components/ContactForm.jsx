@@ -5,8 +5,8 @@ const WEBHOOK_URL =
   import.meta.env.VITE_KLIMATY_CONTACT_WEBHOOK ||
   'https://adrian264-20264.wykr.es/webhook/klimaty_kontakt';
 
-const AUTH_HEADER_NAME = import.meta.env.n8n_NAME;
-const AUTH_HEADER_VALUE = import.meta.env.n8n_VALUE;
+const AUTH_HEADER_NAME = import.meta.env.VITE_N8N_NAME;
+const AUTH_HEADER_VALUE = import.meta.env.VITE_N8N_VALUE;
 
 const initialState = { name: '', phone: '', message: '' };
 
