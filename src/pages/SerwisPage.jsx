@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Broom, Wrench, MapPin, Drop, Phone } from '@phosphor-icons/react';
+import { ArrowRight, Broom, Wrench, MapPin, Drop, Phone, ShieldCheck } from '@phosphor-icons/react';
 import SEOHead from '../components/SEOHead';
 import PageHero from '../components/PageHero';
 import DarkSection from '../components/DarkSection';
-import PlaceholderContent from '../components/PlaceholderContent';
 import CTASection from '../components/CTASection';
 import { seoMeta, SITE_URL } from '../data/seoMeta';
 import { cities } from '../data/cities';
+import { serwisContent } from '../data/content/serwis';
 
 const meta = seoMeta['/serwis-klimatyzacji/'];
 
@@ -42,11 +42,6 @@ const schema = [
   },
 ];
 
-const cleaningItems = [
-  { Icon: Broom, title: 'Czyszczenie filtrów i wymienników', desc: 'Pełne czyszczenie parownika, skraplacza i filtrów. Dezynfekcja z użyciem środków certyfikowanych.' },
-  { Icon: Drop, title: 'Uzupełnienie czynnika chłodniczego', desc: 'Kontrola szczelności, odzysk i uzupełnienie czynnika zgodnie z wymaganiami F-Gaz.' },
-];
-
 export default function SerwisPage() {
   return (
     <>
@@ -67,41 +62,80 @@ export default function SerwisPage() {
       />
 
       <DarkSection eyebrow="Zalecenia" h2="Kiedy i dlaczego robić przegląd klimatyzacji?">
-        <p className="text-zinc-400 font-sans text-lg leading-relaxed max-w-3xl mb-10">
-          Regularny serwis klimatyzacji to nie tylko warunek zachowania gwarancji, ale też zdrowia i niższych rachunków za prąd. Zalecamy przegląd 1-2 razy w roku.
-        </p>
-        <PlaceholderContent />
-      </DarkSection>
+        <div className="max-w-3xl">
+          <p className="text-zinc-300 font-sans text-lg leading-relaxed mb-6">
+            {serwisContent.kiedy.intro}
+          </p>
+          {serwisContent.kiedy.paragraphs.map((p, i) => (
+            <p key={i} className="text-zinc-400 font-sans text-base leading-relaxed mb-5">
+              {p}
+            </p>
+          ))}
+        </div>
 
-      <DarkSection variant="alt" eyebrow="Czyszczenie" h2="Jak wygląda czyszczenie klimatyzacji?">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {cleaningItems.map(({ Icon, title, desc }, i) => (
-            <article key={i} className="bg-[#0d0d10] border border-white/5 p-8 flex flex-col gap-5">
-              <Icon size={32} weight="duotone" className="text-accent" />
-              <h3 className="text-xl font-heading font-bold text-white">{title}</h3>
-              <p className="text-sm text-zinc-400 leading-relaxed">{desc}</p>
-              <PlaceholderContent compact />
-            </article>
+        <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl">
+          {serwisContent.kiedy.schedule.map((row, i) => (
+            <div key={i} className="bg-[#0d0d10] border border-white/5 p-6">
+              <p className="text-xs font-mono uppercase tracking-widest text-zinc-500 mb-2">{row.context}</p>
+              <p className="text-xl font-heading font-bold text-accent">{row.frequency}</p>
+            </div>
           ))}
         </div>
       </DarkSection>
 
-      <DarkSection eyebrow="Naprawa" h2="Co obejmuje naprawa i diagnostyka?">
-        <article className="bg-[#0d0d10] border border-white/5 p-8 flex flex-col gap-5 max-w-3xl">
-          <Wrench size={32} weight="duotone" className="text-accent" />
-          <h3 className="text-xl font-heading font-bold text-white">Naprawa i diagnostyka</h3>
-          <p className="text-sm text-zinc-400 leading-relaxed">
-            Diagnostyka elektroniki, wymiana części, naprawa wycieków. Obsługa wszystkich marek.
-          </p>
-          <PlaceholderContent compact />
-        </article>
+      <DarkSection variant="alt" eyebrow="Czyszczenie" h2="Jak wygląda czyszczenie klimatyzacji?">
+        <p className="text-zinc-300 font-sans text-lg leading-relaxed max-w-3xl mb-10">
+          {serwisContent.czyszczenie.intro}
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {serwisContent.czyszczenie.items.map((item, i) => (
+            <article key={i} className="bg-[#0d0d10] border border-white/5 p-8 flex flex-col gap-5">
+              <Broom size={32} weight="duotone" className="text-accent" />
+              <h3 className="text-xl font-heading font-bold text-white">{item.title}</h3>
+              <p className="text-sm text-zinc-400 leading-relaxed">{item.desc}</p>
+            </article>
+          ))}
+        </div>
+
+        <div className="mt-10 max-w-3xl bg-[#0d0d10] border border-accent/20 p-8 flex flex-col gap-4">
+          <Drop size={28} weight="duotone" className="text-accent" />
+          <h3 className="text-lg font-heading font-bold text-white">Ozonowanie — dla alergików i po dłuższej przerwie</h3>
+          <p className="text-sm text-zinc-400 leading-relaxed">{serwisContent.czyszczenie.dezynfekcja}</p>
+        </div>
       </DarkSection>
 
-      <DarkSection variant="alt" eyebrow="Koszt" h2="Ile kosztuje serwis klimatyzacji?">
+      <DarkSection eyebrow="Naprawa" h2="Co obejmuje naprawa i diagnostyka?">
+        <p className="text-zinc-300 font-sans text-lg leading-relaxed max-w-3xl mb-10">
+          {serwisContent.naprawa.intro}
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {serwisContent.naprawa.cases.map((item, i) => (
+            <article key={i} className="bg-[#0d0d10] border border-white/5 p-8 flex flex-col gap-4">
+              <Wrench size={28} weight="duotone" className="text-accent" />
+              <h3 className="text-lg font-heading font-bold text-white">{item.symptom}</h3>
+              <p className="text-sm text-zinc-400 leading-relaxed">{item.diagnosis}</p>
+            </article>
+          ))}
+        </div>
+        <p className="text-zinc-400 font-sans text-base leading-relaxed max-w-3xl mt-8">
+          {serwisContent.naprawa.outro}
+        </p>
+      </DarkSection>
+
+      <DarkSection variant="alt" eyebrow="Certyfikaty" h2={serwisContent.fGaz.heading}>
+        <div className="max-w-3xl bg-[#0d0d10] border border-white/5 p-8 md:p-10 flex flex-col gap-5">
+          <ShieldCheck size={36} weight="duotone" className="text-accent" />
+          <p className="text-zinc-300 font-sans text-base md:text-lg leading-relaxed">
+            {serwisContent.fGaz.body}
+          </p>
+        </div>
+      </DarkSection>
+
+      <DarkSection eyebrow="Koszt" h2="Ile kosztuje serwis klimatyzacji?">
         <div className="bg-[#0d0d10] border border-white/5 p-8 md:p-10 flex flex-col gap-5 max-w-3xl">
           <Phone size={32} weight="duotone" className="text-accent" />
           <p className="text-zinc-300 font-sans text-base md:text-lg leading-relaxed">
-            Koszt serwisu zależy od zakresu prac, liczby jednostek i stanu urządzenia. Aby uzyskać wycenę, skontaktuj się z nami — odpowiemy indywidualnie na każde zapytanie.
+            Zakres prac różni się znacząco między rutynowym przeglądem domowego splita a czyszczeniem ciśnieniowym klimy w gastronomii po kilku sezonach. Dlatego zamiast podawać cenę, którą i tak trzeba by potem korygować, prosimy o telefon — po krótkim opisie urządzenia (marka, model, rok montażu, kiedy ostatnio serwisowane) podamy widełki, a finalną kwotę ustalamy przy umawianiu wizyty.
           </p>
           <a
             href="tel:883297379"
@@ -112,9 +146,9 @@ export default function SerwisPage() {
         </div>
       </DarkSection>
 
-      <DarkSection eyebrow="Obszar działania" h2="Gdzie serwisujemy klimatyzację?">
+      <DarkSection variant="alt" eyebrow="Obszar działania" h2="Gdzie serwisujemy klimatyzację?">
         <p className="text-zinc-400 font-sans text-lg leading-relaxed max-w-3xl mb-10">
-          Serwis klimatyzacji realizujemy w Krakowie oraz okolicznych gminach. Dojazd w obrębie Małopolski jest bezpłatny.
+          Serwis klimatyzacji realizujemy w Krakowie oraz okolicznych gminach. Dojazd w obrębie tych lokalizacji jest bezpłatny — nie doliczamy go do rachunku ani przed, ani po wizycie.
         </p>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
           {cities.map((city) => (

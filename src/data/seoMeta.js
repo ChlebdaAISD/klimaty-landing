@@ -9,7 +9,7 @@ export const seoMeta = {
   '/': {
     title: 'Klimatyzacja Kraków — Montaż i Serwis | klimaTY',
     description: 'Montaż i serwis klimatyzacji w Krakowie i okolicach. 15+ lat doświadczenia, 1000+ instalacji. Certyfikat F-Gaz i SEP. Bezpłatna wycena — zadzwoń! 883 297 379',
-    h1: 'Klimatyzacja Kraków — montaż, serwis i sprzedaż',
+    h1: 'Klimatyzacja Kraków — montaż, serwis, instalacje',
     canonical: `${SITE_URL}/`,
   },
   '/montaz-klimatyzacji/': {
@@ -70,7 +70,7 @@ export const seoMeta = {
   },
   '/klimatyzacja-krakow/': {
     title: 'Klimatyzacja Kraków — Lokalny montaż i serwis | klimaTY',
-    description: 'Klimatyzacja w Krakowie — montaż, serwis i sprzedaż we wszystkich dzielnicach. 15 lat doświadczenia, F-Gaz, SEP. Krótki czas reakcji. Bezpłatna wycena!',
+    description: 'Klimatyzacja w Krakowie — montaż, serwis i instalacje we wszystkich dzielnicach. 15 lat doświadczenia, F-Gaz, SEP. Krótki czas reakcji. Bezpłatna wycena!',
     h1: 'Klimatyzacja Kraków — montaż i serwis we wszystkich dzielnicach',
     canonical: `${SITE_URL}/klimatyzacja-krakow/`,
   },
@@ -82,7 +82,7 @@ export const seoMeta = {
   },
   '/klimatyzacja-niepolomice/': {
     title: 'Klimatyzacja Niepołomice — Montaż i Serwis | klimaTY',
-    description: 'Klimatyzacja w Niepołomicach — montaż, serwis i sprzedaż. Firma z Krakowa, dojazd gratis. 15 lat doświadczenia, F-Gaz. Zadzwoń: 883 297 379!',
+    description: 'Klimatyzacja w Niepołomicach — montaż, serwis i instalacje. Firma z Krakowa, dojazd gratis. 15 lat doświadczenia, F-Gaz. Zadzwoń: 883 297 379!',
     h1: 'Klimatyzacja Niepołomice — montaż i serwis',
     canonical: `${SITE_URL}/klimatyzacja-niepolomice/`,
   },

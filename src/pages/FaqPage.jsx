@@ -5,58 +5,15 @@ import PageHero from '../components/PageHero';
 import DarkSection from '../components/DarkSection';
 import CTASection from '../components/CTASection';
 import { seoMeta, SITE_URL } from '../data/seoMeta';
+import { faqContent } from '../data/content/faq';
 
 const meta = seoMeta['/faq/'];
 
-const placeholderAnswer = 'Treść dostępna wkrótce. Szczegółowa odpowiedź zostanie dodana w kolejnej aktualizacji strony. W razie pytań zadzwoń: 883 297 379.';
-
-const pricingAnswer = 'Cena zależy od wielu czynników — zakresu prac, liczby i typu jednostek, lokalizacji oraz warunków technicznych. Bezpłatna wycena po telefonie: 883 297 379.';
-
 const faqCategories = [
-  {
-    id: 'montaz',
-    Icon: Wrench,
-    title: 'Pytania o montaż klimatyzacji',
-    questions: [
-      { q: 'Ile trwa montaż klimatyzacji?', a: placeholderAnswer },
-      { q: 'Ile kosztuje montaż klimatyzacji?', a: pricingAnswer },
-      { q: 'Czy montaż jest brudny lub głośny?', a: placeholderAnswer },
-      { q: 'Czy można montować klimatyzację zimą?', a: placeholderAnswer },
-      { q: 'Kiedy jest najlepszy czas na montaż?', a: placeholderAnswer },
-    ],
-  },
-  {
-    id: 'serwis',
-    Icon: GearSix,
-    title: 'Pytania o serwis i czyszczenie',
-    questions: [
-      { q: 'Jak często serwisować klimatyzację?', a: placeholderAnswer },
-      { q: 'Co obejmuje przegląd klimatyzacji?', a: placeholderAnswer },
-      { q: 'Ile kosztuje czyszczenie klimatyzacji?', a: pricingAnswer },
-      { q: 'Czy mogę sam czyścić filtry?', a: placeholderAnswer },
-    ],
-  },
-  {
-    id: 'koszty',
-    Icon: CurrencyCircleDollar,
-    title: 'Pytania o koszty i wycenę',
-    questions: [
-      { q: 'Ile kosztuje klimatyzacja do domu?', a: pricingAnswer },
-      { q: 'Ile kosztuje klimatyzacja do biura?', a: pricingAnswer },
-      { q: 'Czy wycena jest bezpłatna?', a: 'Tak. Wycena i konsultacja na miejscu są całkowicie bezpłatne i bez zobowiązań. Umów wizytę pod numerem 883 297 379.' },
-    ],
-  },
-  {
-    id: 'dobor',
-    Icon: Lightbulb,
-    title: 'Pytania o dobór urządzenia',
-    questions: [
-      { q: 'Jaką moc klimatyzacji potrzebuję?', a: placeholderAnswer },
-      { q: 'Split czy multi-split — co wybrać?', a: placeholderAnswer },
-      { q: 'Jaką markę klimatyzacji polecacie?', a: placeholderAnswer },
-      { q: 'Klimatyzacja a pompa ciepła — różnice?', a: placeholderAnswer },
-    ],
-  },
+  { id: 'montaz', Icon: Wrench, title: 'Pytania o montaż klimatyzacji', questions: faqContent.montaz },
+  { id: 'serwis', Icon: GearSix, title: 'Pytania o serwis i czyszczenie', questions: faqContent.serwis },
+  { id: 'koszty', Icon: CurrencyCircleDollar, title: 'Pytania o koszty i wycenę', questions: faqContent.koszty },
+  { id: 'dobor', Icon: Lightbulb, title: 'Pytania o dobór urządzenia', questions: faqContent.dobor },
 ];
 
 const allQuestions = faqCategories.flatMap((cat) => cat.questions);

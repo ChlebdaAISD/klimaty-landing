@@ -4,7 +4,7 @@ export default function FAQ() {
   const faqs = [
     {
       q: "Ile potrwa montaż?",
-      a: "Większość standardowych instalacji (jeden split) zamykamy w 4-6 godzin. Dla układów multisplit termin ustalamy na podstawie wizji lokalnej."
+      a: "Większość standardowych instalacji (jeden split) zamykamy w 4–6 godzin. Dla układów multi-split termin ustalamy na podstawie wizji lokalnej."
     },
     {
       q: "Czy wiercenie będzie brudne?",

@@ -55,7 +55,7 @@ export default function UslugiPage() {
       <PageHero
         eyebrow="Nasza oferta"
         h1={meta.h1}
-        description="Kompleksowa obsługa klimatyzacji od A do Z — montaż urządzeń, serwis i naprawa oraz instalacje pod klimatyzacje na etapie budowy. Obsługujemy Kraków i całą Małopolskę."
+        description="Kompleksowa obsługa klimatyzacji od A do Z — montaż urządzeń, serwis i naprawa oraz instalacje pod klimatyzacje na etapie budowy. Pracujemy w Krakowie i pięciu sąsiednich gminach."
         ctaLabel="Bezpłatna wycena"
         ctaHref="/kontakt/"
         secondaryCtaLabel="Zadzwoń: 883 297 379"

@@ -3,7 +3,6 @@ import { Image, House, Buildings, Storefront } from '@phosphor-icons/react';
 import SEOHead from '../components/SEOHead';
 import PageHero from '../components/PageHero';
 import DarkSection from '../components/DarkSection';
-import PlaceholderContent from '../components/PlaceholderContent';
 import CTASection from '../components/CTASection';
 import { seoMeta, SITE_URL } from '../data/seoMeta';
 
@@ -16,7 +15,7 @@ const faqItems = [
   },
   {
     q: 'Ile trwa realizacja montażu klimatyzacji?',
-    a: 'Pojedynczy split: 4-6 godzin. Multi-split (2-3 jednostki wewnętrzne): 1 dzień roboczy. Instalacje w biurach lub lokalach usługowych z większą liczbą jednostek: 1-3 dni w zależności od zakresu.',
+    a: 'Pojedynczy split: 4–6 godzin. Multi-split z 3–4 jednostkami wewnętrznymi: 2 dni robocze — pierwszy dzień to trasy i przewierty, drugi dzień to podłączenie, próba szczelności i rozruch. W domach jednorodzinnych z 4–5 jednostkami realnie 2–3 dni. Instalacje komercyjne w biurach i lokalach z większą liczbą jednostek: 2–4 dni w zależności od zakresu.',
   },
   {
     q: 'Czy realizujemy instalacje w biurach i lokalach usługowych?',
@@ -28,7 +27,7 @@ const faqItems = [
   },
   {
     q: 'Gdzie realizujemy projekty?',
-    a: 'Kraków i cała Małopolska — Wieliczka, Niepołomice, Zielonki, Michałowice, Czarnochowice i okolice. Dojazd w obrębie Małopolski jest bezpłatny.',
+    a: 'Na co dzień pracujemy w Krakowie i pięciu sąsiednich gminach: Wieliczce, Niepołomicach, Zielonkach, Michałowicach i Czarnochowicach. W tych lokalizacjach dojazd i wycena są bezpłatne. Większe zlecenia montażowe realizujemy też poza tym obszarem — na terenie Małopolski, a przy kontraktach komercyjnych również w całej Polsce — wtedy warunki dojazdu ustalamy indywidualnie.',
   },
 ];
 
@@ -106,11 +105,7 @@ export default function RealizacjePage() {
         </div>
       </DarkSection>
 
-      <DarkSection eyebrow="Lokalizacje" h2="Gdzie realizowaliśmy nasze projekty?">
-        <PlaceholderContent label="Lista realizacji z lokalizacjami — wkrótce" />
-      </DarkSection>
-
-      <DarkSection variant="alt" eyebrow="FAQ" h2="Najczęściej zadawane pytania o realizacjach">
+      <DarkSection eyebrow="FAQ" h2="Najczęściej zadawane pytania o realizacjach">
         <div className="max-w-4xl">
           {faqItems.map((item, i) => (
             <div key={i} className="border-b border-white/5 py-6">

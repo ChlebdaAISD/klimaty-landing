@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { HardHat, GearSix, Wrench, ShieldCheck, MapPin, CheckCircle, ArrowRight, Phone } from '@phosphor-icons/react';
+import { HardHat, GearSix, Wrench, ShieldCheck, MapPin, CheckCircle, ArrowRight, Phone, Quotes } from '@phosphor-icons/react';
 import SEOHead from '../components/SEOHead';
 import PageHero from '../components/PageHero';
 import DarkSection from '../components/DarkSection';
@@ -48,7 +48,7 @@ export default function CityPage({ slug }) {
         name: 'klimaTY',
         telephone: '+48883297379',
       },
-      description: `Montaż, serwis i sprzedaż klimatyzacji w ${city.nameLocative}.`,
+      description: `Montaż, serwis i instalacje klimatyzacji w ${city.nameLocative}.`,
     },
     {
       '@context': 'https://schema.org',
@@ -73,7 +73,7 @@ export default function CityPage({ slug }) {
       <PageHero
         eyebrow={`Klimatyzacja ${city.name}`}
         h1={meta.h1}
-        description={`Profesjonalny montaż, serwis i sprzedaż klimatyzacji w ${city.nameLocative}. ${city.distance}. Dojazd gratis, szybka realizacja, pełne certyfikaty.`}
+        description={`Profesjonalny montaż, serwis i instalacje klimatyzacji w ${city.nameLocative}. ${city.distance}. Dojazd gratis, szybka realizacja, pełne certyfikaty.`}
         ctaLabel="Bezpłatna wycena"
         ctaHref="/kontakt/"
         secondaryCtaLabel="Zadzwoń: 883 297 379"
@@ -81,20 +81,38 @@ export default function CityPage({ slug }) {
       />
 
       <DarkSection eyebrow="Lokalnie" h2={`Szukasz montażu klimatyzacji w ${city.nameLocative}?`}>
-        <p className="text-zinc-400 font-sans text-lg leading-relaxed max-w-3xl mb-10">
-          {city.localContext}
-        </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="max-w-3xl space-y-5 mb-12">
+          {city.intro.map((paragraph, i) => (
+            <p key={i} className="text-zinc-300 font-sans text-base md:text-lg leading-relaxed">
+              {paragraph}
+            </p>
+          ))}
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {city.specificity.map((item, i) => (
-            <div key={i} className="bg-[#0d0d10] border border-white/5 p-5 flex items-start gap-3">
-              <CheckCircle size={20} weight="duotone" className="text-accent shrink-0 mt-0.5" />
-              <span className="text-sm text-zinc-300">{item}</span>
-            </div>
+            <article key={i} className="bg-[#0d0d10] border border-white/5 p-6 flex flex-col gap-3">
+              <div className="flex items-center gap-3">
+                <CheckCircle size={20} weight="duotone" className="text-accent shrink-0" />
+                <h3 className="text-lg font-heading font-bold text-white">{item.title}</h3>
+              </div>
+              <p className="text-sm text-zinc-400 leading-relaxed">{item.body}</p>
+            </article>
           ))}
         </div>
       </DarkSection>
 
-      <DarkSection variant="alt" eyebrow="Usługi" h2={`Co oferujemy w ${city.nameLocative}?`}>
+      {city.localCase && (
+        <DarkSection variant="alt" eyebrow="Case study" h2="Realizacja, która dobrze pokazuje, jak pracujemy">
+          <div className="border-l-2 border-accent pl-6 py-2 flex items-start gap-4 max-w-3xl">
+            <Quotes size={24} weight="fill" aria-hidden="true" className="text-accent shrink-0 mt-1" />
+            <p className="text-lg font-sans text-zinc-200 leading-relaxed">
+              {city.localCase}
+            </p>
+          </div>
+        </DarkSection>
+      )}
+
+      <DarkSection variant={city.localCase ? undefined : 'alt'} eyebrow="Usługi" h2={`Co oferujemy w ${city.nameLocative}?`}>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <Link
             to="/montaz-klimatyzacji/"
@@ -138,7 +156,7 @@ export default function CityPage({ slug }) {
         </div>
       </DarkSection>
 
-      <DarkSection eyebrow="Dlaczego my" h2={`Dlaczego warto wybrać klimaTY w ${city.nameLocative}?`}>
+      <DarkSection variant="alt" eyebrow="Dlaczego my" h2={`Dlaczego warto wybrać klimaTY w ${city.nameLocative}?`}>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
             { Icon: MapPin, title: 'Lokalnie', desc: `${city.distance}. Dojazd i wycena bezpłatne.` },
@@ -155,17 +173,24 @@ export default function CityPage({ slug }) {
         </div>
       </DarkSection>
 
-      <DarkSection variant="alt" eyebrow="Cennik" h2={`Ile kosztuje klimatyzacja w ${city.nameLocative}?`}>
-        <PlaceholderContent label="Orientacyjny cennik — wkrótce" />
+      <DarkSection eyebrow="Cennik" h2={`Ile kosztuje klimatyzacja w ${city.nameLocative}?`}>
+        <div className="max-w-3xl space-y-5">
+          <p className="text-zinc-300 font-sans text-base md:text-lg leading-relaxed">
+            Nie publikujemy cennika. Każda realizacja w {city.nameLocative} zaczyna się od bezpłatnej wizji lokalnej — przyjeżdżamy, mierzymy, sprawdzamy ściany zewnętrzne i miejsce na jednostkę zewnętrzną. Dopiero wtedy wyceniamy. Zdjęcia z Messengera są zbyt mało dokładne, żeby podać kwotę bez pomyłki w którąkolwiek stronę.
+          </p>
+          <p className="text-zinc-400 font-sans text-base md:text-lg leading-relaxed">
+            Na kwotę wpływa kilka rzeczy: liczba stref (pojedynczy split czy multi-split), odległość między jednostką wewnętrzną a zewnętrzną, marka i moc urządzenia, specyfika ściany (zwykły mur, klinkier, elewacja wentylowana, ściana zabytkowa). W ciągu 1–2 dni po wizji dostajesz wycenę końcową — bez „dopłat w trakcie montażu”.
+          </p>
+        </div>
       </DarkSection>
 
-      <DarkSection eyebrow="Galeria" h2="Jakie realizacje mamy w okolicy?">
+      <DarkSection variant="alt" eyebrow="Galeria" h2="Jakie realizacje mamy w okolicy?">
         <PlaceholderContent label="Mini-galeria lokalnych realizacji — wkrótce" />
       </DarkSection>
 
-      <DarkSection variant="alt" eyebrow="Obszar działania" h2="Gdzie jeszcze świadczymy usługi?">
+      <DarkSection eyebrow="Obszar działania" h2="Gdzie jeszcze świadczymy usługi?">
         <p className="text-zinc-400 font-sans text-lg leading-relaxed max-w-3xl mb-6">
-          Świadczymy usługi głównie na terenie <strong className="text-white">Małopolski</strong>, a w przypadku większych zleceń montażowych także na terenie <strong className="text-white">całej Polski</strong>. Nasi główni klienci pochodzą z Krakowa oraz gmin wokół Krakowa — poniżej znajdziesz najczęściej obsługiwane lokalizacje.
+          Na co dzień pracujemy w <strong className="text-white">Krakowie i pięciu sąsiednich gminach</strong> — tam dojazd i wycena są bezpłatne. Większe zlecenia montażowe realizujemy też dalej, na terenie Małopolski, a przy kontraktach komercyjnych również w całej Polsce — warunki dojazdu ustalamy wtedy indywidualnie.
         </p>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
           {otherCities.map((c) => (

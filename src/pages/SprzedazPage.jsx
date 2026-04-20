@@ -3,7 +3,6 @@ import { HouseLine, Wrench, CheckCircle, Sparkle, ShieldCheck, Ruler } from '@ph
 import SEOHead from '../components/SEOHead';
 import PageHero from '../components/PageHero';
 import DarkSection from '../components/DarkSection';
-import PlaceholderContent from '../components/PlaceholderContent';
 import CTASection from '../components/CTASection';
 import { seoMeta, SITE_URL } from '../data/seoMeta';
 
@@ -70,7 +69,7 @@ export default function SprzedazPage() {
 
       <DarkSection eyebrow="Dlaczego teraz" h2="Dlaczego warto przemyśleć klimatyzację na etapie budowy?">
         <p className="text-zinc-400 font-sans text-lg leading-relaxed max-w-3xl mb-10">
-          Instalacja pod klimatyzację w trakcie budowy lub remontu to oszczędność czasu, pieniędzy i nerwów. Wszystkie przewody — chłodnicze, kondensatu i zasilające — układamy zanim powstaną finalne tynki i elewacja. Gdy zdecydujesz się podwiesić jednostki wewnętrzne, pozostaje tylko ich montaż — bez kucia, bez pyłu, bez poprawek malarskich.
+          Instalacja pod klimatyzację w trakcie budowy lub remontu to oszczędność czasu, pieniędzy i nerwów. Wszystkie przewody — chłodnicze, kondensatu i zasilające — układamy zanim powstaną finalne tynki i elewacja. Gdy zdecydujesz się zamontować jednostki wewnętrzne, pozostaje tylko ich zawieszenie — bez kucia, bez pyłu, bez poprawek malarskich.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <article className="bg-[#0d0d10] border border-white/5 p-8 flex flex-col gap-5">
@@ -132,13 +131,6 @@ export default function SprzedazPage() {
             </article>
           ))}
         </div>
-      </DarkSection>
-
-      <DarkSection variant="alt" eyebrow="Realizacja" h2="Jak wygląda współpraca?">
-        <p className="text-zinc-400 font-sans text-lg leading-relaxed max-w-3xl mb-10">
-          Od pierwszego telefonu po oddanie instalacji — mamy proces dopracowany pod ekipy budowlane i inwestorów prywatnych. Zjawiamy się w terminie i nie blokujemy prac ekipy budowlanej.
-        </p>
-        <PlaceholderContent label="Harmonogram i szczegóły realizacji — opis w przygotowaniu" />
       </DarkSection>
 
       <CTASection
