@@ -1,19 +1,18 @@
 import React from 'react';
-import { House, Buildings, Gauge, Snowflake, Lightbulb, Storefront } from '@phosphor-icons/react';
+import { HouseLine, Wrench, CheckCircle, Sparkle, ShieldCheck, Ruler } from '@phosphor-icons/react';
 import SEOHead from '../components/SEOHead';
 import PageHero from '../components/PageHero';
 import DarkSection from '../components/DarkSection';
-import PlaceholderContent from '../components/PlaceholderContent';
 import CTASection from '../components/CTASection';
 import { seoMeta, SITE_URL } from '../data/seoMeta';
 
-const meta = seoMeta['/sprzedaz-klimatyzacji/'];
+const meta = seoMeta['/instalacje-pod-klimatyzacje/'];
 
 const schema = [
   {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    serviceType: 'Sprzedaż klimatyzacji',
+    serviceType: 'Instalacje pod klimatyzacje',
     provider: {
       '@type': 'LocalBusiness',
       name: 'klimaTY',
@@ -35,12 +34,19 @@ const schema = [
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Strona główna', item: `${SITE_URL}/` },
       { '@type': 'ListItem', position: 2, name: 'Usługi', item: `${SITE_URL}/uslugi/` },
-      { '@type': 'ListItem', position: 3, name: 'Sprzedaż klimatyzacji', item: meta.canonical },
+      { '@type': 'ListItem', position: 3, name: 'Instalacje pod klimatyzacje', item: meta.canonical },
     ],
   },
 ];
 
-const brands = ['Gree', 'LG', 'Samsung', 'Mitsubishi Electric', 'Daikin', 'Panasonic', 'Haier', 'Fujitsu'];
+const qualityChecklist = [
+  { Icon: CheckCircle, title: 'Schowane w elewacji', desc: 'Przewody prowadzone w bruzdach, zakryte tynkiem lub w izolacji elewacji — nie widać rurek na ścianach.' },
+  { Icon: CheckCircle, title: 'Miedziane rurki w izolacji', desc: 'Grubościenna miedź z fabrycznej otuliny kauczukowej. Brak kondensacji, brak strat energii.' },
+  { Icon: CheckCircle, title: 'Odpływ skroplin pod spadkiem', desc: 'Przewód kondensatu ułożony z właściwym spadkiem do kanalizacji lub na zewnątrz — bez zastojów i zapachów.' },
+  { Icon: CheckCircle, title: 'Zasilanie przy jednostce zewnętrznej', desc: 'Osobny obwód elektryczny z zabezpieczeniem doprowadzony pod miejsce montażu skraplacza.' },
+  { Icon: CheckCircle, title: 'Estetyczne wyprowadzenia', desc: 'Zaślepione, oznaczone końcówki w ścianach. Nic nie wystaje, nic nie przeszkadza w dalszych pracach.' },
+  { Icon: CheckCircle, title: 'Dokumentacja trasy', desc: 'Zdjęcia i schemat przebiegu instalacji przed zatynkowaniem — przydatne przy przyszłych remontach.' },
+];
 
 export default function SprzedazPage() {
   return (
@@ -52,115 +58,84 @@ export default function SprzedazPage() {
         schema={schema}
       />
       <PageHero
-        eyebrow="Sprzedaż klimatyzacji"
+        eyebrow="Instalacje pod klimatyzacje"
         h1={meta.h1}
-        description="Doradzamy i sprzedajemy klimatyzacje renomowanych marek. Dobieramy moc i typ pod Twoją przestrzeń, budżet i oczekiwania. Bezpłatna konsultacja."
-        ctaLabel="Bezpłatna konsultacja"
+        description="Etap 1: układamy instalację przewodów na etapie budowy domu lub remontu. Etap 2 (po miesiącach lub latach): montujemy urządzenia bez kucia ścian i bałaganu."
+        ctaLabel="Umów konsultację"
         ctaHref="/kontakt/"
         secondaryCtaLabel="Zadzwoń: 883 297 379"
         secondaryCtaHref="tel:883297379"
       />
 
-      <DarkSection eyebrow="Dom" h2="Jaką klimatyzację wybrać do domu?">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-          <article className="bg-[#0d0d10] border border-white/5 p-8 flex flex-col gap-5">
-            <House size={32} weight="duotone" className="text-accent" />
-            <h3 className="text-2xl font-heading font-bold text-white">Mieszkania i apartamenty</h3>
-            <p className="text-sm text-zinc-400 leading-relaxed">
-              Ciche urządzenia split 2,5-3,5 kW dopasowane do kawalerek, mieszkań dwu- i trzypokojowych. Klasa energetyczna A++.
-            </p>
-            <PlaceholderContent compact />
-          </article>
-          <article className="bg-[#0d0d10] border border-white/5 p-8 flex flex-col gap-5">
-            <Gauge size={32} weight="duotone" className="text-accent" />
-            <h3 className="text-2xl font-heading font-bold text-white">Domy jednorodzinne</h3>
-            <p className="text-sm text-zinc-400 leading-relaxed">
-              Systemy multi-split obsługujące 2-5 pomieszczeń z jednej jednostki zewnętrznej. Sterowanie przez aplikację.
-            </p>
-            <PlaceholderContent compact />
-          </article>
-        </div>
-      </DarkSection>
-
-      <DarkSection variant="alt" eyebrow="Biuro" h2="Jaka klimatyzacja sprawdzi się w biurze?">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <article className="bg-[#0d0d10] border border-white/5 p-8 flex flex-col gap-5">
-            <Buildings size={32} weight="duotone" className="text-accent" />
-            <h3 className="text-2xl font-heading font-bold text-white">Biura i gabinety</h3>
-            <p className="text-sm text-zinc-400 leading-relaxed">
-              Kasetonowe i kanałowe urządzenia do biur open-space, sal konferencyjnych i gabinetów.
-            </p>
-            <PlaceholderContent compact />
-          </article>
-          <article className="bg-[#0d0d10] border border-white/5 p-8 flex flex-col gap-5">
-            <Storefront size={32} weight="duotone" className="text-accent" />
-            <h3 className="text-2xl font-heading font-bold text-white">Lokale usługowe</h3>
-            <p className="text-sm text-zinc-400 leading-relaxed">
-              Rozwiązania dla sklepów, restauracji, salonów — trwałe, wydajne, z niskim zużyciem energii.
-            </p>
-            <PlaceholderContent compact />
-          </article>
-        </div>
-      </DarkSection>
-
-      <DarkSection eyebrow="Marki" h2="Z jakimi markami klimatyzatorów pracujemy?">
+      <DarkSection eyebrow="Dlaczego teraz" h2="Dlaczego warto przemyśleć klimatyzację na etapie budowy?">
         <p className="text-zinc-400 font-sans text-lg leading-relaxed max-w-3xl mb-10">
-          Sprzedajemy i montujemy klimatyzacje sprawdzonych producentów. Każda marka to inna charakterystyka — pomagamy wybrać właściwą.
+          Instalacja pod klimatyzację w trakcie budowy lub remontu to oszczędność czasu, pieniędzy i nerwów. Wszystkie przewody — chłodnicze, kondensatu i zasilające — układamy zanim powstaną finalne tynki i elewacja. Gdy zdecydujesz się zamontować jednostki wewnętrzne, pozostaje tylko ich zawieszenie — bez kucia, bez pyłu, bez poprawek malarskich.
         </p>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
-          {brands.map((brand) => (
-            <div key={brand} className="bg-[#0d0d10] border border-white/5 p-6 flex items-center justify-center">
-              <span className="text-lg font-heading font-bold text-white">{brand}</span>
-            </div>
-          ))}
-        </div>
-        <PlaceholderContent label="Szczegółowe opisy marek — wkrótce" />
-      </DarkSection>
-
-      <DarkSection variant="alt" eyebrow="Technologia" h2="Czym różni się split od multi-split?">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <article className="bg-[#0d0d10] border border-white/5 p-8 flex flex-col gap-5">
-            <Snowflake size={32} weight="duotone" className="text-accent" />
-            <h3 className="text-2xl font-heading font-bold text-white">System split</h3>
+            <HouseLine size={32} weight="duotone" className="text-accent" />
+            <h3 className="text-2xl font-heading font-bold text-white">Etap 1 — instalacja przewodów</h3>
             <p className="text-sm text-zinc-400 leading-relaxed">
-              Jedna jednostka zewnętrzna obsługuje jedno pomieszczenie. Prosty, niezawodny, idealny dla mniejszych przestrzeni.
+              Układamy trasy chłodnicze, odpływ skroplin i zasilanie elektryczne. Wszystko schowane w ścianach, stropach lub elewacji, z wyprowadzeniami w miejscach przyszłych jednostek.
             </p>
-            <PlaceholderContent compact />
           </article>
           <article className="bg-[#0d0d10] border border-white/5 p-8 flex flex-col gap-5">
-            <Snowflake size={32} weight="duotone" className="text-accent" />
-            <h3 className="text-2xl font-heading font-bold text-white">System multi-split</h3>
+            <Wrench size={32} weight="duotone" className="text-accent" />
+            <h3 className="text-2xl font-heading font-bold text-white">Etap 2 — montaż urządzeń</h3>
             <p className="text-sm text-zinc-400 leading-relaxed">
-              Jedna jednostka zewnętrzna obsługuje 2-5 pomieszczeń. Oszczędność miejsca na elewacji i energii.
+              Za kilka miesięcy lub nawet lat — gdy dom jest wykończony i zamieszkany — wracamy i montujemy klimatyzatory. Szybko, czysto, bez prac budowlanych.
             </p>
-            <PlaceholderContent compact />
           </article>
         </div>
       </DarkSection>
 
-      <DarkSection eyebrow="Doradztwo" h2="Jak wygląda bezpłatne doradztwo i dobór?">
+      <DarkSection variant="alt" eyebrow="Jakość" h2="Dlaczego jakość instalacji ma znaczenie?">
+        <p className="text-zinc-400 font-sans text-lg leading-relaxed max-w-3xl mb-10">
+          Instalacje pod klimatyzację można zrobić na kilka sposobów — i różnica jest widoczna dopiero po latach użytkowania. Tańsze materiały i pośpieszne wykonanie skutkują nieszczelnościami, głośną pracą urządzenia, kondensacją wody i obniżoną wydajnością. My pracujemy na sprawdzonych komponentach i nie przyspieszamy kosztem jakości.
+        </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-[#0d0d10] border border-white/5 p-6 flex flex-col gap-4">
-            <Lightbulb size={32} weight="duotone" className="text-accent" />
-            <h3 className="text-lg font-heading font-bold text-white">1. Rozmowa</h3>
-            <p className="text-sm text-zinc-400 leading-relaxed">Pytamy o potrzeby, budżet i oczekiwania. Wszystko przez telefon lub na miejscu.</p>
-          </div>
-          <div className="bg-[#0d0d10] border border-white/5 p-6 flex flex-col gap-4">
-            <Gauge size={32} weight="duotone" className="text-accent" />
-            <h3 className="text-lg font-heading font-bold text-white">2. Dobór urządzenia</h3>
-            <p className="text-sm text-zinc-400 leading-relaxed">Proponujemy 2-3 opcje dopasowane do Twoich warunków i portfela.</p>
-          </div>
-          <div className="bg-[#0d0d10] border border-white/5 p-6 flex flex-col gap-4">
-            <Snowflake size={32} weight="duotone" className="text-accent" />
-            <h3 className="text-lg font-heading font-bold text-white">3. Oferta pakietowa</h3>
-            <p className="text-sm text-zinc-400 leading-relaxed">Urządzenie + montaż + uruchomienie + gwarancja w jednej cenie, bez ukrytych kosztów.</p>
-          </div>
+          <article className="bg-[#0d0d10] border border-white/5 p-8 flex flex-col gap-5">
+            <ShieldCheck size={32} weight="duotone" className="text-accent" />
+            <h3 className="text-xl font-heading font-bold text-white">Grubościenna miedź</h3>
+            <p className="text-sm text-zinc-400 leading-relaxed">
+              Używamy rurek miedzianych o sprawdzonej grubości ścianki i odpowiedniej średnicy. Przewód wytrzymuje ciśnienie robocze bez ryzyka mikropęknięć.
+            </p>
+          </article>
+          <article className="bg-[#0d0d10] border border-white/5 p-8 flex flex-col gap-5">
+            <Sparkle size={32} weight="duotone" className="text-accent" />
+            <h3 className="text-xl font-heading font-bold text-white">Pełna izolacja termiczna</h3>
+            <p className="text-sm text-zinc-400 leading-relaxed">
+              Każdy metr rurki ma fabryczną otulinę kauczukową — bez przerw, bez odsłoniętych fragmentów. Zero strat energii, zero kondensacji.
+            </p>
+          </article>
+          <article className="bg-[#0d0d10] border border-white/5 p-8 flex flex-col gap-5">
+            <Ruler size={32} weight="duotone" className="text-accent" />
+            <h3 className="text-xl font-heading font-bold text-white">Precyzyjne trasy</h3>
+            <p className="text-sm text-zinc-400 leading-relaxed">
+              Trasy planujemy razem z Tobą i architektem — w bruzdach i stropach, zgodnie z przyszłym rozmieszczeniem mebli i jednostek.
+            </p>
+          </article>
+        </div>
+      </DarkSection>
+
+      <DarkSection eyebrow="Checklista" h2="Po czym poznać wysokiej jakości instalację?">
+        <p className="text-zinc-400 font-sans text-lg leading-relaxed max-w-3xl mb-10">
+          Jeśli w Twoim domu lub biurze instalacja była już wykonana — możesz ocenić jej jakość po kilku prostych znakach. Brakuje któregoś elementu? Zadzwoń, przyjedziemy i sprawdzimy.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {qualityChecklist.map(({ Icon, title, desc }, i) => (
+            <article key={i} className="bg-[#0d0d10] border border-white/5 p-8 flex flex-col gap-4">
+              <Icon size={28} weight="duotone" className="text-accent" />
+              <h3 className="text-lg font-heading font-bold text-white">{title}</h3>
+              <p className="text-sm text-zinc-400 leading-relaxed">{desc}</p>
+            </article>
+          ))}
         </div>
       </DarkSection>
 
       <CTASection
-        headline="Dobierzmy razem idealną klimatyzację"
-        description="Bezpłatna konsultacja i wycena. Doradzimy, jakie urządzenie najlepiej sprawdzi się u Ciebie."
+        headline="Budujesz lub remontujesz? Porozmawiajmy"
+        description="Zaplanujmy razem instalację pod klimatyzację na etapie budowy. Bezpłatna konsultacja — zadzwoń lub napisz."
       />
     </>
   );

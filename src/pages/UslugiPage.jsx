@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ChatDots, Wrench, HardHat, GearSix, ArrowRight } from '@phosphor-icons/react';
+import { Wrench, HardHat, GearSix, ArrowRight } from '@phosphor-icons/react';
 import SEOHead from '../components/SEOHead';
 import PageHero from '../components/PageHero';
 import DarkSection from '../components/DarkSection';
@@ -22,31 +22,24 @@ const schema = {
 const services = [
   {
     Icon: HardHat,
-    heading: 'Potrzebujesz montażu klimatyzacji?',
-    short: 'Profesjonalny montaż split i multi-split w domach, mieszkaniach i biurach. Wiercenie bezpyłowe, czysta instalacja, pełne zabezpieczenie mebli.',
+    heading: 'Montaż klimatyzacji',
+    short: 'Profesjonalny montaż urządzeń split i multi-split w domach, mieszkaniach i biurach. Wiercenie bezpyłowe, czysta instalacja, pełne zabezpieczenie mebli.',
     link: '/montaz-klimatyzacji/',
     linkLabel: 'Montaż klimatyzacji',
   },
   {
     Icon: GearSix,
-    heading: 'Kiedy warto zamówić serwis klimatyzacji?',
-    short: 'Przeglądy sezonowe, czyszczenie filtrów, dezynfekcja, uzupełnienie czynnika chłodniczego. Obsługa gwarancyjna i pogwarancyjna.',
+    heading: 'Serwis i naprawa klimatyzacji',
+    short: 'Czyszczenie, dezynfekcja, uzupełnianie czynnika chłodniczego, diagnostyka i naprawa. Obsługa wszystkich marek klimatyzatorów.',
     link: '/serwis-klimatyzacji/',
-    linkLabel: 'Serwis klimatyzacji',
+    linkLabel: 'Serwis i naprawa',
   },
   {
     Icon: Wrench,
-    heading: 'Szukasz klimatyzacji do kupienia?',
-    short: 'Doradzamy i dobieramy urządzenia renomowanych marek: Gree, LG, Samsung, Mitsubishi Electric, Daikin. Dopasowujemy moc i typ do Twoich potrzeb.',
-    link: '/sprzedaz-klimatyzacji/',
-    linkLabel: 'Sprzedaż klimatyzacji',
-  },
-  {
-    Icon: ChatDots,
-    heading: 'Jak wygląda bezpłatne doradztwo?',
-    short: 'Bezpłatna konsultacja i wycena na miejscu u klienta. Omawiamy potrzeby, budżet i warunki techniczne, proponujemy optymalne rozwiązanie.',
-    link: '/kontakt/',
-    linkLabel: 'Umów konsultację',
+    heading: 'Instalacje pod klimatyzacje',
+    short: 'Przewody i infrastruktura układana na etapie budowy domu lub remontu — zanim zamontujemy urządzenia. Czysto, estetycznie, z dobrych materiałów.',
+    link: '/instalacje-pod-klimatyzacje/',
+    linkLabel: 'Instalacje pod klimatyzacje',
   },
 ];
 
@@ -62,7 +55,7 @@ export default function UslugiPage() {
       <PageHero
         eyebrow="Nasza oferta"
         h1={meta.h1}
-        description="Kompleksowa obsługa klimatyzacji od A do Z — montaż, serwis, sprzedaż i bezpłatne doradztwo. Obsługujemy Kraków i całą Małopolskę."
+        description="Kompleksowa obsługa klimatyzacji od A do Z — montaż urządzeń, serwis i naprawa oraz instalacje pod klimatyzacje na etapie budowy. Pracujemy w Krakowie i pięciu sąsiednich gminach."
         ctaLabel="Bezpłatna wycena"
         ctaHref="/kontakt/"
         secondaryCtaLabel="Zadzwoń: 883 297 379"
@@ -70,7 +63,7 @@ export default function UslugiPage() {
       />
 
       <DarkSection eyebrow="Zakres usług" h2="Co dla Ciebie zrobimy?">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {services.map(({ Icon, heading, short, link, linkLabel }, i) => (
             <article key={i} className="group bg-[#0d0d10] border border-white/5 hover:border-accent/30 p-8 flex flex-col gap-6 transition-colors duration-300">
               <div className="w-12 h-12 bg-accent/10 flex items-center justify-center shrink-0 group-hover:bg-accent/20 transition-colors duration-300">
@@ -83,22 +76,6 @@ export default function UslugiPage() {
                 {linkLabel} <ArrowRight size={16} weight="bold" />
               </Link>
             </article>
-          ))}
-        </div>
-      </DarkSection>
-
-      <DarkSection variant="alt" eyebrow="Zaufanie" h2="Dlaczego warto wybrać klimaTY?">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-          {[
-            { num: '15+', label: 'lat doświadczenia' },
-            { num: '1000+', label: 'ukończonych instalacji' },
-            { num: 'F-Gaz', label: 'certyfikat' },
-            { num: 'SEP', label: 'uprawnienia' },
-          ].map((b, i) => (
-            <div key={i} className="bg-[#09090b] border border-white/5 p-8 text-center">
-              <div className="text-4xl md:text-5xl font-heading font-bold text-accent mb-2">{b.num}</div>
-              <div className="text-xs font-mono uppercase tracking-widest text-zinc-500">{b.label}</div>
-            </div>
           ))}
         </div>
       </DarkSection>

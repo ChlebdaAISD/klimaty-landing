@@ -24,12 +24,12 @@ export default function Navbar({ isMenuOpen, setIsMenuOpen }) {
 
   const serviceSubItems = [
     { label: 'Montaż klimatyzacji', to: '/montaz-klimatyzacji/' },
-    { label: 'Serwis klimatyzacji', to: '/serwis-klimatyzacji/' },
-    { label: 'Sprzedaż klimatyzacji', to: '/sprzedaz-klimatyzacji/' },
+    { label: 'Serwis i naprawa klimatyzacji', to: '/serwis-klimatyzacji/' },
+    { label: 'Instalacje pod klimatyzacje', to: '/instalacje-pod-klimatyzacje/' },
   ];
 
   const menuItems = [
-    { label: 'Usługi', to: '/uslugi/', hasDropdown: true },
+    { label: 'Usługi', hasDropdown: true },
     { label: 'O nas', to: '/o-nas/' },
     { label: 'Realizacje', to: '/realizacje/' },
     { label: 'Opinie', to: '/opinie/' },
@@ -68,13 +68,16 @@ export default function Navbar({ isMenuOpen, setIsMenuOpen }) {
                 onMouseEnter={() => setServicesOpen(true)}
                 onMouseLeave={() => setServicesOpen(false)}
               >
-                <Link
-                  to={item.to}
-                  className="inline-flex shrink-0 whitespace-nowrap items-center gap-1 text-sm font-medium tracking-tight text-text-dark hover:text-accent transition-colors"
+                <button
+                  type="button"
+                  onClick={() => setServicesOpen((v) => !v)}
+                  aria-expanded={servicesOpen}
+                  aria-haspopup="true"
+                  className="inline-flex shrink-0 whitespace-nowrap items-center gap-1 text-sm font-medium tracking-tight text-text-dark hover:text-accent transition-colors cursor-pointer bg-transparent"
                 >
                   {item.label}
                   <CaretDown size={12} weight="bold" className={`transition-transform ${servicesOpen ? 'rotate-180' : ''}`} />
-                </Link>
+                </button>
                 {servicesOpen && (
                   <div className="absolute top-full left-0 pt-3">
                     <div className="bg-white border border-black/5 shadow-lg min-w-[220px] py-2">

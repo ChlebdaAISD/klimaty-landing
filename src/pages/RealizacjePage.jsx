@@ -3,11 +3,33 @@ import { Image, House, Buildings, Storefront } from '@phosphor-icons/react';
 import SEOHead from '../components/SEOHead';
 import PageHero from '../components/PageHero';
 import DarkSection from '../components/DarkSection';
-import PlaceholderContent from '../components/PlaceholderContent';
 import CTASection from '../components/CTASection';
 import { seoMeta, SITE_URL } from '../data/seoMeta';
 
 const meta = seoMeta['/realizacje/'];
+
+const faqItems = [
+  {
+    q: 'Jak wygląda proces montażu w domu lub mieszkaniu?',
+    a: 'Przyjeżdżamy w umówionym terminie, zabezpieczamy meble i podłogi folią, wiercimy bezpyłowo i montujemy jednostki. Standardowa realizacja split zajmuje 4-6 godzin. Po montażu uruchamiamy urządzenie, sprawdzamy szczelność i pokazujemy, jak je obsługiwać.',
+  },
+  {
+    q: 'Ile trwa realizacja montażu klimatyzacji?',
+    a: 'Pojedynczy split: 4–6 godzin. Multi-split z 3–4 jednostkami wewnętrznymi: 2 dni robocze — pierwszy dzień to trasy i przewierty, drugi dzień to podłączenie, próba szczelności i rozruch. W domach jednorodzinnych z 4–5 jednostkami realnie 2–3 dni. Instalacje komercyjne w biurach i lokalach z większą liczbą jednostek: 2–4 dni w zależności od zakresu.',
+  },
+  {
+    q: 'Czy realizujemy instalacje w biurach i lokalach usługowych?',
+    a: 'Tak. Obsługujemy biura, gabinety, sklepy, restauracje i inne obiekty komercyjne. Dobieramy urządzenia do specyfiki lokalu (np. kasetonowe do open-space) i dopasowujemy harmonogram prac, żeby nie zakłócać pracy firmy.',
+  },
+  {
+    q: 'Czy montujecie klimatyzacje w domach w trakcie budowy?',
+    a: 'Tak — to najlepszy moment. Realizujemy wtedy instalacje pod klimatyzacje: układamy przewody chłodnicze, odpływ skroplin i zasilanie zanim powstaną tynki i elewacja. Po wprowadzeniu się wracamy i montujemy urządzenia bez kucia ścian.',
+  },
+  {
+    q: 'Gdzie realizujemy projekty?',
+    a: 'Na co dzień pracujemy w Krakowie i pięciu sąsiednich gminach: Wieliczce, Niepołomicach, Zielonkach, Michałowicach i Czarnochowicach. W tych lokalizacjach dojazd i wycena są bezpłatne. Większe zlecenia montażowe realizujemy też poza tym obszarem — na terenie Małopolski, a przy kontraktach komercyjnych również w całej Polsce — wtedy warunki dojazdu ustalamy indywidualnie.',
+  },
+];
 
 const schema = [
   {
@@ -16,6 +38,15 @@ const schema = [
     name: meta.title,
     description: meta.description,
     url: meta.canonical,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqItems.map((item) => ({
+      '@type': 'Question',
+      name: item.q,
+      acceptedAnswer: { '@type': 'Answer', text: item.a },
+    })),
   },
   {
     '@context': 'https://schema.org',
@@ -74,8 +105,19 @@ export default function RealizacjePage() {
         </div>
       </DarkSection>
 
-      <DarkSection eyebrow="Lokalizacje" h2="Gdzie realizowaliśmy nasze projekty?">
-        <PlaceholderContent label="Lista realizacji z lokalizacjami — wkrótce" />
+      <DarkSection eyebrow="FAQ" h2="Najczęściej zadawane pytania o realizacjach">
+        <div className="max-w-4xl">
+          {faqItems.map((item, i) => (
+            <div key={i} className="border-b border-white/5 py-6">
+              <h3 className="text-lg md:text-xl font-heading font-semibold text-white mb-3">
+                {item.q}
+              </h3>
+              <p className="text-zinc-400 text-base leading-relaxed font-sans">
+                {item.a}
+              </p>
+            </div>
+          ))}
+        </div>
       </DarkSection>
 
       <CTASection

@@ -26,7 +26,14 @@ export default function Layout() {
   }, [location.pathname]);
 
   const menuItems = [
-    { label: 'Usługi', to: '/uslugi/' },
+    {
+      label: 'Usługi',
+      subItems: [
+        { label: 'Montaż klimatyzacji', to: '/montaz-klimatyzacji/' },
+        { label: 'Serwis i naprawa klimatyzacji', to: '/serwis-klimatyzacji/' },
+        { label: 'Instalacje pod klimatyzacje', to: '/instalacje-pod-klimatyzacje/' },
+      ],
+    },
     { label: 'O nas', to: '/o-nas/' },
     { label: 'Realizacje', to: '/realizacje/' },
     { label: 'Opinie', to: '/opinie/' },
@@ -37,7 +44,9 @@ export default function Layout() {
   return (
     <div className="relative min-h-screen bg-background text-text-dark font-sans selection:bg-accent selection:text-white overflow-x-clip">
       {/* Mobile slide-out drawer */}
-      <div
+      <nav
+        aria-label="Menu mobilne"
+        aria-hidden={!isMenuOpen}
         className={`fixed inset-y-0 left-0 w-[80vw] max-w-[320px] bg-[#09090b] border-r border-white/10 z-[60] lg:hidden transition-transform duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] flex flex-col pt-8 px-8 pb-12 overflow-y-auto ${
           isMenuOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
@@ -61,14 +70,36 @@ export default function Layout() {
 
         <div className="flex flex-col gap-6 mb-auto">
           {menuItems.map((item, i) => (
-            <Link
-              key={i}
-              to={item.to}
-              className="text-2xl font-bold font-heading tracking-tight text-white hover:text-accent transition-colors"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              {item.label}
-            </Link>
+            <div key={i} className="flex flex-col gap-4">
+              {item.to ? (
+                <Link
+                  to={item.to}
+                  className="text-2xl font-bold font-heading tracking-tight text-white hover:text-accent transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              ) : (
+                <span className="text-2xl font-bold font-heading tracking-tight text-white">
+                  {item.label}
+                </span>
+              )}
+              {item.subItems && (
+                <ul className="flex flex-col gap-3 pl-4 border-l border-white/10">
+                  {item.subItems.map((sub, j) => (
+                    <li key={j}>
+                      <Link
+                        to={sub.to}
+                        className="text-sm font-medium text-zinc-400 hover:text-accent transition-colors"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        {sub.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
           ))}
         </div>
 
@@ -76,7 +107,7 @@ export default function Layout() {
           <MotionButton href="tel:883297379" label="Zadzwoń" variant="accent" context="dark" />
           <a href="mailto:kontakt@klima-ty.pl" className="text-sm font-mono text-zinc-400 hover:text-white transition-colors">kontakt@klima-ty.pl</a>
         </div>
-      </div>
+      </nav>
 
       {/* Main Page Wrapper */}
       <div

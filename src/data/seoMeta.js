@@ -9,14 +9,8 @@ export const seoMeta = {
   '/': {
     title: 'Klimatyzacja Kraków — Montaż i Serwis | klimaTY',
     description: 'Montaż i serwis klimatyzacji w Krakowie i okolicach. 15+ lat doświadczenia, 1000+ instalacji. Certyfikat F-Gaz i SEP. Bezpłatna wycena — zadzwoń! 883 297 379',
-    h1: 'Klimatyzacja Kraków — montaż, serwis i sprzedaż',
+    h1: 'Klimatyzacja Kraków — montaż, serwis, instalacje',
     canonical: `${SITE_URL}/`,
-  },
-  '/uslugi/': {
-    title: 'Usługi klimatyzacyjne Kraków — Oferta | klimaTY',
-    description: 'Kompleksowe usługi klimatyzacyjne: montaż, serwis, sprzedaż i doradztwo. Obsługujemy Kraków i okolice. Certyfikat F-Gaz. Sprawdź naszą ofertę!',
-    h1: 'Usługi klimatyzacyjne — nasza oferta',
-    canonical: `${SITE_URL}/uslugi/`,
   },
   '/montaz-klimatyzacji/': {
     title: 'Montaż klimatyzacji Kraków — Profesjonalnie | klimaTY',
@@ -25,16 +19,24 @@ export const seoMeta = {
     canonical: `${SITE_URL}/montaz-klimatyzacji/`,
   },
   '/serwis-klimatyzacji/': {
-    title: 'Serwis klimatyzacji Kraków — Przeglądy i naprawa | klimaTY',
-    description: 'Profesjonalny serwis klimatyzacji w Krakowie. Przeglądy sezonowe, czyszczenie, naprawa. Certyfikat F-Gaz. Obsługa gwarancyjna i pogwarancyjna. Zadzwoń!',
-    h1: 'Serwis klimatyzacji Kraków',
+    title: 'Serwis i naprawa klimatyzacji Kraków | klimaTY',
+    description: 'Serwis, czyszczenie, dezynfekcja i naprawa klimatyzacji w Krakowie. Certyfikat F-Gaz. Obsługa wszystkich marek. Bezpłatna wycena — zadzwoń!',
+    h1: 'Serwis i naprawa klimatyzacji Kraków',
     canonical: `${SITE_URL}/serwis-klimatyzacji/`,
   },
+  '/instalacje-pod-klimatyzacje/': {
+    title: 'Instalacje pod klimatyzacje Kraków — na etapie budowy | klimaTY',
+    description: 'Instalacje pod klimatyzacje w Krakowie — układanie przewodów na etapie budowy domu lub remontu. Później czysty montaż urządzeń bez kucia ścian.',
+    h1: 'Instalacje pod klimatyzacje Kraków',
+    canonical: `${SITE_URL}/instalacje-pod-klimatyzacje/`,
+  },
+  // Safety net for in-flight SPA navigation to the old URL before the 301 fires.
+  // Canonical points to the new URL.
   '/sprzedaz-klimatyzacji/': {
-    title: 'Sprzedaż klimatyzacji Kraków — Najlepsze marki | klimaTY',
-    description: 'Sprzedaż klimatyzacji w Krakowie. Gree, LG, Samsung, Mitsubishi, Daikin. Doradzimy i dobierzemy idealne urządzenie. Bezpłatna konsultacja! Zadzwoń.',
-    h1: 'Sprzedaż klimatyzacji Kraków — dobierz idealne urządzenie',
-    canonical: `${SITE_URL}/sprzedaz-klimatyzacji/`,
+    title: 'Instalacje pod klimatyzacje Kraków — na etapie budowy | klimaTY',
+    description: 'Instalacje pod klimatyzacje w Krakowie — układanie przewodów na etapie budowy domu lub remontu. Później czysty montaż urządzeń bez kucia ścian.',
+    h1: 'Instalacje pod klimatyzacje Kraków',
+    canonical: `${SITE_URL}/instalacje-pod-klimatyzacje/`,
   },
   '/o-nas/': {
     title: 'O nas — klimaTY | Klimatyzacja Kraków od 15 lat',
@@ -68,7 +70,7 @@ export const seoMeta = {
   },
   '/klimatyzacja-krakow/': {
     title: 'Klimatyzacja Kraków — Lokalny montaż i serwis | klimaTY',
-    description: 'Klimatyzacja w Krakowie — montaż, serwis i sprzedaż we wszystkich dzielnicach. 15 lat doświadczenia, F-Gaz, SEP. Krótki czas reakcji. Bezpłatna wycena!',
+    description: 'Klimatyzacja w Krakowie — montaż, serwis i instalacje we wszystkich dzielnicach. 15 lat doświadczenia, F-Gaz, SEP. Krótki czas reakcji. Bezpłatna wycena!',
     h1: 'Klimatyzacja Kraków — montaż i serwis we wszystkich dzielnicach',
     canonical: `${SITE_URL}/klimatyzacja-krakow/`,
   },
@@ -80,7 +82,7 @@ export const seoMeta = {
   },
   '/klimatyzacja-niepolomice/': {
     title: 'Klimatyzacja Niepołomice — Montaż i Serwis | klimaTY',
-    description: 'Klimatyzacja w Niepołomicach — montaż, serwis i sprzedaż. Firma z Krakowa, dojazd gratis. 15 lat doświadczenia, F-Gaz. Zadzwoń: 883 297 379!',
+    description: 'Klimatyzacja w Niepołomicach — montaż, serwis i instalacje. Firma z Krakowa, dojazd gratis. 15 lat doświadczenia, F-Gaz. Zadzwoń: 883 297 379!',
     h1: 'Klimatyzacja Niepołomice — montaż i serwis',
     canonical: `${SITE_URL}/klimatyzacja-niepolomice/`,
   },

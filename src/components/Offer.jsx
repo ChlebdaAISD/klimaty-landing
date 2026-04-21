@@ -1,31 +1,25 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ChatDots, Wrench, HardHat, GearSix, ArrowRight } from '@phosphor-icons/react';
+import { Wrench, HardHat, GearSix, ArrowRight } from '@phosphor-icons/react';
 
 const services = [
   {
-    Icon: ChatDots,
-    title: 'Doradztwo',
-    description: 'Bezpłatna konsultacja i wycena na miejscu u klienta. Dobieramy optymalne rozwiązanie dopasowane do Twoich potrzeb i budżetu.',
-    to: '/kontakt/',
-  },
-  {
     Icon: HardHat,
-    title: 'Instalacje',
-    description: 'Montaż jednostek split i multi-split dla klientów indywidualnych i firm. Każda instalacja dopasowana do architektury budynku.',
-    to: '/uslugi/',
-  },
-  {
-    Icon: Wrench,
-    title: 'Montaż',
+    title: 'Montaż klimatyzacji',
     description: 'Wiercenie bezpyłowe, folia ochronna na meble, sprzęt renomowanych marek. Idealny porządek po każdym montażu.',
     to: '/montaz-klimatyzacji/',
   },
   {
     Icon: GearSix,
-    title: 'Serwis',
-    description: 'Przeglądy sezonowe, czyszczenie filtrów i czynnik chłodniczy pod kontrolą. Pełna opieka gwarancyjna i pogwarancyjna.',
+    title: 'Serwis i naprawa klimatyzacji',
+    description: 'Przeglądy, czyszczenie, dezynfekcja, uzupełnianie czynnika oraz diagnostyka i naprawa klimatyzatorów wszystkich marek.',
     to: '/serwis-klimatyzacji/',
+  },
+  {
+    Icon: Wrench,
+    title: 'Instalacje pod klimatyzacje',
+    description: 'Układanie przewodów na etapie budowy domu lub remontu. Później czysty montaż urządzeń bez kucia ścian.',
+    to: '/instalacje-pod-klimatyzacje/',
   },
 ];
 
@@ -40,7 +34,7 @@ export default function Offer() {
           </h3>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {services.map(({ Icon, title, description, to }, i) => (
             <Link
               key={i}

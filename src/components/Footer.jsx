@@ -35,10 +35,9 @@ export default function Footer() {
 
         <div className="flex flex-col gap-3">
           <h5 className="text-xs font-mono uppercase tracking-widest text-zinc-600 mb-2">Usługi</h5>
-          <Link to="/uslugi/" className="text-zinc-400 hover:text-accent transition-colors font-sans text-sm font-medium">Wszystkie usługi</Link>
           <Link to="/montaz-klimatyzacji/" className="text-zinc-400 hover:text-accent transition-colors font-sans text-sm font-medium">Montaż klimatyzacji</Link>
-          <Link to="/serwis-klimatyzacji/" className="text-zinc-400 hover:text-accent transition-colors font-sans text-sm font-medium">Serwis klimatyzacji</Link>
-          <Link to="/sprzedaz-klimatyzacji/" className="text-zinc-400 hover:text-accent transition-colors font-sans text-sm font-medium">Sprzedaż klimatyzacji</Link>
+          <Link to="/serwis-klimatyzacji/" className="text-zinc-400 hover:text-accent transition-colors font-sans text-sm font-medium">Serwis i naprawa klimatyzacji</Link>
+          <Link to="/instalacje-pod-klimatyzacje/" className="text-zinc-400 hover:text-accent transition-colors font-sans text-sm font-medium">Instalacje pod klimatyzacje</Link>
         </div>
 
         <div className="flex flex-col gap-3">
