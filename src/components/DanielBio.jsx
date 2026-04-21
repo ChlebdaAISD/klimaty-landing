@@ -1,7 +1,7 @@
 import React from 'react';
-import { UserCircle, Quotes } from '@phosphor-icons/react';
+import { UserCircle } from '@phosphor-icons/react';
 
-export default function DanielBio({ heading, subtitle, bio, quote, photo }) {
+export default function DanielBio({ heading, subtitle, bio, photo }) {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 items-start">
       <div className="lg:col-span-2">
@@ -30,15 +30,6 @@ export default function DanielBio({ heading, subtitle, bio, quote, photo }) {
             {paragraph}
           </p>
         ))}
-
-        {quote && (
-          <blockquote className="border-l-2 border-accent pl-6 py-2 mt-4 flex items-start gap-4">
-            <Quotes size={24} weight="fill" className="text-accent shrink-0 mt-1" />
-            <p className="text-lg font-heading italic text-white leading-relaxed">
-              {quote}
-            </p>
-          </blockquote>
-        )}
       </div>
     </div>
   );

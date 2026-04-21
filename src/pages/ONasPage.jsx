@@ -106,7 +106,6 @@ export default function ONasPage() {
           heading={oNasContent.daniel.heading}
           subtitle={oNasContent.daniel.subtitle}
           bio={oNasContent.daniel.bio}
-          quote={oNasContent.daniel.quote}
         />
       </DarkSection>
 

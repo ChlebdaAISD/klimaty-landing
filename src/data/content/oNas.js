@@ -19,13 +19,10 @@ export const oNasContent = {
       'Największą satysfakcję sprawia mi klient, który dzwoni po pięciu latach od montażu, żeby umówić przegląd — i mówi, że klima dalej działa tak jak pierwszego dnia. To znaczy, że zrobiliśmy wszystko dobrze: dobór mocy, trasa freonu, izolacja, próba szczelności, rozruch. Każdy z tych etapów da się sknocić. Każdy robimy osobiście, bez podwykonawców.',
       'Najtrudniejszy klient to nie ten wymagający. Wymagających lubię — wiedzą, czego chcą. Najtrudniejszy to ten, który przyjeżdża z gotową wyceną konkurencji i prosi, żebym ją obniżył. Bo wtedy wiem, że poprzednik źle policzył moc albo pominął coś istotnego, a ja za chwilę stanę przed wyborem: zgodzić się na kompromis kosztem jakości, albo uczciwie powiedzieć, że ta wycena jest nierealna. Wybieram drugie.',
     ],
-    quote:
-      'Najtrudniejszy klient to ten, który przyjeżdża z gotową wyceną i prosi, żebym ją obniżył. Bo wtedy wiem, że poprzednik źle policzył moc albo pominął coś istotnego.',
     // TODO: do uzupełnienia po rozmowie z Danielem/Kaśką
     // - Konkretne wykształcenie / poprzednia praca przed klimaTY
     // - Dokładny rok startu firmy (schema.org mówi 2010 — potwierdzić)
     // - Zdjęcie portretowe lub w akcji
-    // - Realna anegdota zamiast parafrazy w cytacie
   },
 
   // Cztery konkretne zasady zamiast generycznych "Doświadczenie / Jakość / Uczciwość / Lokalność"
