@@ -4,7 +4,7 @@ import { UserCircle } from '@phosphor-icons/react';
 export default function DanielBio({ heading, subtitle, bio, photo }) {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 items-start">
-      <div className="lg:col-span-2">
+      <div className="lg:col-span-2 w-full max-w-sm mx-auto lg:max-w-none lg:mx-0">
         <div className="aspect-[4/5] bg-[#0d0d10] border border-white/5 flex items-center justify-center overflow-hidden">
           {photo ? (
             <img src={photo} alt={heading} className="w-full h-full object-cover" />
